@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "react/prop-types": 1,
+    "react/jsx-quotes": 0,
+    "comma-dangle": 0,
+    "new-cap": [2, {
+      "capIsNewExceptions": ["Immutable.Map"]
+    }],
+    "quotes": [2, "single"],
+    "strict": 0,
+    "import/no-extraneous-dependencies": [error, { devDependencies: true }]
+  },
+  "globals": {
+    "sandbox": true
+  }
+}
