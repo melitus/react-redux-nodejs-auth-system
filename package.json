@@ -93,6 +93,7 @@
     "redux-observable": "^0.18.0",
     "redux-thunk": "^2.2.0",
     "rxjs": "^6.0.0",
+    "sane-email-validation": "^1.1.0",
     "serve-favicon": "2.3.0"
   },
   "repository": {
