@@ -12,7 +12,7 @@
     "clean:build": "rimraf build/dist",
     "clean:packages": "rimraf node_modules",
     "dev": "nodemon --delay 250ms --exec NODE_ENV=development babel-node -- ./src/server/",
-    "lint": "eslint src",
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
     "prebuild": "npm run clean:build",
     "prepublish": "npm run build",
     "prestart": "npm run clean:build",
