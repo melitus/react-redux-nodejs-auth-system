@@ -1,7 +1,7 @@
 {
-  "name": "assignments",
+  "name": "react-redux-nodejs-login-app",
   "version": "0.0.1",
-  "description": "MOD-PWJ - Programming with JavaScript Assignments",
+  "description": "nodejs react redux auth system",
   "main": "build/dist/assignments",
   "scripts": {
     "build": "npm run clean:build && cross-env NODE_ENV=development babel-node tools/bundle",
