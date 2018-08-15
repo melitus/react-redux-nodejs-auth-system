@@ -5,6 +5,8 @@ import { Button, Form } from 'semantic-ui-react';
 
 import PersonInfo from './PersonInfo/PersonInfo';
 import ContactDetail from './ContactDetail/ContactDetail';
+import signUpValidation from './signUpValidation';
+
 
 class SignupForm extends React.Component {
 
@@ -27,7 +29,8 @@ class SignupForm extends React.Component {
 }
 
 SignupForm = reduxForm({
-  form: 'loginForm',
+  form: 'signUpForm',
+  validate: signUpValidation,
 })(SignupForm);
 
 export default SignupForm;
