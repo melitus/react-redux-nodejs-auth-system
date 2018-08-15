@@ -1,0 +1,282 @@
+exports[`<PersonInfo /> should render default snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PersonInfo
+    firstName=""
+    lastName=""
+    password="" />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <label
+          target="signup.personInfo.firstName">
+          First Name
+</label>,
+        <Field
+          autoFocus={true}
+          component={[Function]}
+          id="signup.personInfo.firstName"
+          name="firstName"
+          placeholder="First Name"
+          value="" />,
+        <label
+          target="signup.personInfo.lastName">
+          Last Name
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.personInfo.lastName"
+          name="lastName"
+          placeholder="Last Name"
+          value="" />,
+        <label
+          target="signup.personInfo.password">
+          Password
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.personInfo.password"
+          name="Password"
+          placeholder="Password"
+          value="" />,
+      ],
+      "component": "div",
+      "name": "personInfo",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "First Name",
+          "target": "signup.personInfo.firstName",
+        },
+        "ref": null,
+        "rendered": "First Name",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "autoFocus": true,
+          "component": [Function],
+          "id": "signup.personInfo.firstName",
+          "name": "firstName",
+          "placeholder": "First Name",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Last Name",
+          "target": "signup.personInfo.lastName",
+        },
+        "ref": null,
+        "rendered": "Last Name",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.personInfo.lastName",
+          "name": "lastName",
+          "placeholder": "Last Name",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Password",
+          "target": "signup.personInfo.password",
+        },
+        "ref": null,
+        "rendered": "Password",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.personInfo.password",
+          "name": "Password",
+          "placeholder": "Password",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <label
+            target="signup.personInfo.firstName">
+            First Name
+</label>,
+          <Field
+            autoFocus={true}
+            component={[Function]}
+            id="signup.personInfo.firstName"
+            name="firstName"
+            placeholder="First Name"
+            value="" />,
+          <label
+            target="signup.personInfo.lastName">
+            Last Name
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.personInfo.lastName"
+            name="lastName"
+            placeholder="Last Name"
+            value="" />,
+          <label
+            target="signup.personInfo.password">
+            Password
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.personInfo.password"
+            name="Password"
+            placeholder="Password"
+            value="" />,
+        ],
+        "component": "div",
+        "name": "personInfo",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "First Name",
+            "target": "signup.personInfo.firstName",
+          },
+          "ref": null,
+          "rendered": "First Name",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "autoFocus": true,
+            "component": [Function],
+            "id": "signup.personInfo.firstName",
+            "name": "firstName",
+            "placeholder": "First Name",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Last Name",
+            "target": "signup.personInfo.lastName",
+          },
+          "ref": null,
+          "rendered": "Last Name",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.personInfo.lastName",
+            "name": "lastName",
+            "placeholder": "Last Name",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Password",
+            "target": "signup.personInfo.password",
+          },
+          "ref": null,
+          "rendered": "Password",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.personInfo.password",
+            "name": "Password",
+            "placeholder": "Password",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenFourAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
