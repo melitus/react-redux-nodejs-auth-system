@@ -4,16 +4,16 @@ import { Field, FormSection } from 'redux-form';
 
 import { Input } from '../../Field/index';
 
-const ForgotPasswordDetails = ({ email, password }) => (
+const ForgotPasswordDetails = ({ email }) => (
   <FormSection name="forgotPassword">
-    <label target="forgotPassword.forgotPasswordDetails.passwword">Password</label>
+    <label target="forgotPassword.forgotPasswordDetails.email">Email</label>
     <Field
-      id="forgotPassword.forgotPasswordDetails.password"
-      name="password"
+      id="forgotPassword.forgotPasswordDetails.email"
+      name="email"
       component={Input}
-      placeholder="Password"
-      type="password"
-      value={password}
+      placeholder="Email"
+      type="email"
+      value={email}
     />
   </FormSection>
 );
