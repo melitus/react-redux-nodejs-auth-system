@@ -64,7 +64,6 @@
     "precommit-hook-eslint": "3.0.0",
     "prop-types": "^15.6.1",
     "ramda": "^0.25.0",
-    "react": "^15.4.2",
     "react-addons-test-utils": "15.4.1",
     "react-test-renderer": "^16.2.0",
     "react-transform-catch-errors": "1.0.1",
@@ -76,6 +75,7 @@
     "webpack-cli": "^2.0.10"
   },
   "dependencies": {
+    "autoprefixer": "^9.1.1",
     "babel-polyfill": "6.20.0",
     "body-parser": "^1.18.2",
     "dom-helpers": "2.4.0",
@@ -83,6 +83,7 @@
     "express": "^4.16.3",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.14.5",
+    "lru-memoize": "^1.0.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.7",
@@ -94,6 +95,7 @@
     "redux-thunk": "^2.2.0",
     "rxjs": "^6.0.0",
     "sane-email-validation": "^1.1.0",
+    "semantic-ui-react": "^0.82.2",
     "serve-favicon": "2.3.0"
   },
   "repository": {

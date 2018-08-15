@@ -2,7 +2,7 @@
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
 
-import Input from '../../Field/index';
+import { Input } from '../../Field/index';
 
 const ContactDetail = ({ email, phoneNumber }) => (
   <FormSection name="contactDetail">

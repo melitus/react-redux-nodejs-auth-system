@@ -2,23 +2,21 @@ import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 
+import SignInDetails from './SignInDetails/SignInDetails';
+import loginValidation from './loginValidation';
 
-import PersonInfo from './PersonInfo/PersonInfo';
-import ContactDetail from './ContactDetail/ContactDetail';
 
-class SignupForm extends React.Component {
+class SignInForm extends React.Component {
 
   render() {
     const {
       handleSubmit,
-      personInfo,
-      contactDetail,
+      signInDetails,
     } = this.props;
     return (
       <Form onSubmit={handleSubmit} autoComplete="off"> 
         <Form.Field inline required>
-         <PersonInfo personInfo={personInfo} />
-         <ContactDetail contactDetail={contactDetail} />
+         <SignInDetails signInDetails={signInDetails} />
         </Form.Field>
         <Button primary type="submit">Submit</Button>
       </Form>
@@ -26,8 +24,9 @@ class SignupForm extends React.Component {
   }
 }
 
-SignupForm = reduxForm({
+SignInForm = reduxForm({
   form: 'loginForm',
-})(SignupForm);
+  validate: loginValidation,
+})(SignInForm);
 
-export default SignupForm;
+export default SignInForm;

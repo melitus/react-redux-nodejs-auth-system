@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const store = createStore(rootReducers);
 
 // Read the environement variable to initializate the process
-const PORT = process.env.PORT || 4003;
+const PORT = process.env.PORT ||3005
 
 // set up View templates and  engine
 app.engine('handlebars', exphbs({ defaultLayout: 'template' }));

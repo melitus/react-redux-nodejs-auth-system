@@ -2,9 +2,9 @@
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
 
-import Input from '../../Field/index';
+import { Input } from '../../Field/index';
 
-const PersonInfo = ({ firstName, lastName }) => (
+const PersonInfo = ({ firstName, lastName, password }) => (
   <FormSection name="personInfo">
     <label target="signup.personInfo.firstName">First Name</label>
     <Field
@@ -24,12 +24,22 @@ const PersonInfo = ({ firstName, lastName }) => (
       placeholder="Last Name"
       value={lastName}
     />
+
+    <label target="signup.personInfo.password">Password</label>
+    <Field
+      id="signup.personInfo.password"
+      name="Password"
+      component={Input}
+      placeholder="Password"
+      value={password}
+    />
   </FormSection>
 );
 
 PersonInfo.defaultProps = {
   firstName: '',
   lastName: '',
+  password: '',
 };
 
 export default PersonInfo;
