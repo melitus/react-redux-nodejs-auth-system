@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 
-import ForgotPasswordDetails from './ForgotPasswordDetails/ForgotPasswordDetails';
+import ForgotPasswordDetails from './forgotPasswordDetail/ForgotPasswordDetails';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
 
