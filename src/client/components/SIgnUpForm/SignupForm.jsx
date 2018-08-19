@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { Button, Form ,Container, Grid } from 'semantic-ui-react';
-// import { Link } from 'react-router-dom';
 
 import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
@@ -13,7 +12,7 @@ class SignupForm extends React.Component {
       pristine, 
       loading,
       submitting,
-      signUpFormDetails,
+      signUpFormDetails
     } = this.props;
     return (
   <Container>
@@ -24,7 +23,7 @@ class SignupForm extends React.Component {
             <Form.Field >
             <SignUpFormDetails signUpFormDetails={signUpFormDetails} />
             </Form.Field>
-            <Button primary type='signUp' disabled={pristine || submitting}>Sign Up</Button>
+            <Form.Button primary type='signUp' disabled={pristine || submitting}>Sign Up</Form.Button>
            </Form>
           </Grid.Column>
         </Grid.Row>

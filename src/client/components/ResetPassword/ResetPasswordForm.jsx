@@ -5,7 +5,6 @@ import { Button, Form } from 'semantic-ui-react';
 import ResetPasswordDetails from './ResetPasswordDetails/ResetPasswordDetails';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
-
 class ResetPasswordForm extends React.Component {
 
   render() {

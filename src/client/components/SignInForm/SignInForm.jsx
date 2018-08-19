@@ -5,7 +5,6 @@ import { Button, Form } from 'semantic-ui-react';
 import SignInDetails from './SignInDetails/SignInDetails';
 import loginValidation from './loginValidation';
 
-
 class SignInForm extends React.Component {
 
   render() {

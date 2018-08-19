@@ -5,7 +5,6 @@ import { Button, Form } from 'semantic-ui-react';
 import ForgotPasswordDetails from './forgotPasswordDetail/ForgotPasswordDetails';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
-
 class ForgotPasswordForm extends React.Component {
 
   render() {
