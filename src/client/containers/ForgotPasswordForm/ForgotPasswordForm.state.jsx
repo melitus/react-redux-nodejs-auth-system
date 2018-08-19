@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import SignInForm from '../../components/SignInForm/SignInForm';
+import ForgotPasswordForm from '../../components/ForgotPasswordForm/ForgotPasswordForm';
 
 
 // event handling should be done here
@@ -12,7 +12,7 @@ export const mapDispatchToProps = () => ({
   });
 
 export const mapStateToProps = state => ({
-    loginDetails: selectForgotPasswordDetails(state),
+    forgotPasswordDetails: selectForgotPasswordDetails(state),
   });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ForgotPasswordForm);
