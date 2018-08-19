@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 import SignInForm from '../../components/SignInForm/SignInForm';
 
-
 // event handling should be done here
 
 export const mapDispatchToProps = () => ({

@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 import SignupForm from '../../components/SignupForm/SignupForm';
 
-
 // event handling should be done here
 
 export const mapDispatchToProps = () => ({
