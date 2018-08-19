@@ -1,36 +1,42 @@
 import React, { PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form ,Container, Grid } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
 
-
-import PersonInfo from './PersonInfo/PersonInfo';
-import ContactDetail from './ContactDetail/ContactDetail';
-import signUpValidation from './signUpValidation';
-
+import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
 class SignupForm extends React.Component {
 
   render() {
     const {
       handleSubmit,
-      personInfo,
-      contactDetail,
+      pristine, 
+      loading,
+      submitting,
+      signUpFormDetails,
     } = this.props;
     return (
-      <Form onSubmit={handleSubmit} autoComplete="off"> 
-        <Form.Field inline required>
-         <PersonInfo personInfo={personInfo} />
-         <ContactDetail contactDetail={contactDetail} />
-        </Form.Field>
-        <Button primary type="submit">Submit</Button>
-      </Form>
+  <Container>
+    <Grid>
+      <Grid.Row centered>
+         <Grid.Column width={6}>
+          <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} > 
+            <Form.Field >
+            <SignUpFormDetails signUpFormDetails={signUpFormDetails} />
+            </Form.Field>
+            <Button primary type='signUp' disabled={pristine || submitting}>Sign Up</Button>
+           </Form>
+          </Grid.Column>
+        </Grid.Row>
+     </Grid>
+  </Container>
     );
   }
 }
 
 SignupForm = reduxForm({
   form: 'signUpForm',
-  validate: signUpValidation,
+  //validate: signUpValidation,
 })(SignupForm);
 
 export default SignupForm;

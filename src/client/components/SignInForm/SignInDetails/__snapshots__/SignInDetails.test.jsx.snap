@@ -23,7 +23,7 @@ ShallowWrapper {
           Email
 </label>,
         <Field
-          component={[Function]}
+          component={undefined}
           id="signin.personInfo.email"
           name="email"
           placeholder="Email"
@@ -34,7 +34,7 @@ ShallowWrapper {
           Password
 </label>,
         <Field
-          component={[Function]}
+          component={undefined}
           id="signup.signinDetail.password"
           name="password"
           placeholder="Password"
@@ -63,7 +63,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "component": [Function],
+          "component": undefined,
           "id": "signin.personInfo.email",
           "name": "email",
           "placeholder": "Email",
@@ -91,7 +91,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "component": [Function],
+          "component": undefined,
           "id": "signup.signinDetail.password",
           "name": "password",
           "placeholder": "Password",
@@ -117,7 +117,7 @@ ShallowWrapper {
             Email
 </label>,
           <Field
-            component={[Function]}
+            component={undefined}
             id="signin.personInfo.email"
             name="email"
             placeholder="Email"
@@ -128,7 +128,7 @@ ShallowWrapper {
             Password
 </label>,
           <Field
-            component={[Function]}
+            component={undefined}
             id="signup.signinDetail.password"
             name="password"
             placeholder="Password"
@@ -157,7 +157,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "component": [Function],
+            "component": undefined,
             "id": "signin.personInfo.email",
             "name": "email",
             "placeholder": "Email",
@@ -185,7 +185,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "component": [Function],
+            "component": undefined,
             "id": "signup.signinDetail.password",
             "name": "password",
             "placeholder": "Password",

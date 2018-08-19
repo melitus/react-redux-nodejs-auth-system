@@ -17,7 +17,7 @@
     "prepublish": "npm run build",
     "prestart": "npm run clean:build",
     "pretest": "npm run lint",
-    "start": "babel-node build/server.js",
+    "start": "npm run build && npm run dev",
     "test": "jest --config jest/test.config.json",
     "test:watch": "jest --watch",
     "validate": "npm ls"

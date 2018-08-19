@@ -1,0 +1,624 @@
+exports[`<SignUpFormDetails /> should render default snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SignUpFormDetails
+    email=""
+    firstname=""
+    lastname=""
+    password=""
+    phoneNumber="" />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <label
+          target="signup.signUpFormDetails.firstName">
+          First Name
+</label>,
+        <Field
+          autoFocus={true}
+          component={[Function]}
+          id="signup.signUpFormDetails.firstName"
+          label={
+                    Object {
+                              "content": <Icon
+                                as="i"
+                                color="blue"
+                                name="user"
+                                size="small" />,
+                            }
+          }
+          labelPosition="left"
+          name="firstName"
+          placeholder="First Name"
+          value={undefined} />,
+        <label
+          target="signup.signUpFormDetails.lastName">
+          Last Name
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.signUpFormDetails.lastName"
+          label={
+                    Object {
+                              "content": <Icon
+                                as="i"
+                                color="blue"
+                                name="user"
+                                size="small" />,
+                            }
+          }
+          labelPosition="left"
+          name="lastName"
+          placeholder="Last Name"
+          value={undefined} />,
+        <label
+          target="signup.signUpFormDetails.password">
+          Password
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.signUpFormDetails.password"
+          label={
+                    Object {
+                              "content": <Icon
+                                as="i"
+                                color="blue"
+                                name="lock"
+                                size="small" />,
+                            }
+          }
+          labelPosition="left"
+          name="Password"
+          placeholder="Password"
+          type="password"
+          value="" />,
+        <label
+          target="signup.signUpFormDetails.email">
+          Email
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.signUpFormDetails.email"
+          label={
+                    Object {
+                              "content": <Icon
+                                as="i"
+                                color="blue"
+                                name="envelope"
+                                size="small" />,
+                            }
+          }
+          labelPosition="left"
+          name="email"
+          placeholder="Email"
+          type="email"
+          value="" />,
+        <label
+          target="signup.signUpFormDetails.phoneNumber">
+          Phone Number
+</label>,
+        <Field
+          component={[Function]}
+          id="signup.signUpFormDetails.phoneNumber"
+          label={
+                    Object {
+                              "content": <Icon
+                                as="i"
+                                color="blue"
+                                name="phone"
+                                size="small" />,
+                            }
+          }
+          labelPosition="left"
+          name="phoneNumber"
+          placeholder="Phone Number"
+          type="number"
+          value="" />,
+      ],
+      "component": "div",
+      "name": "signUpFormDetails",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "First Name",
+          "target": "signup.signUpFormDetails.firstName",
+        },
+        "ref": null,
+        "rendered": "First Name",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "autoFocus": true,
+          "component": [Function],
+          "id": "signup.signUpFormDetails.firstName",
+          "label": Object {
+            "content": <Icon
+              as="i"
+              color="blue"
+              name="user"
+              size="small" />,
+          },
+          "labelPosition": "left",
+          "name": "firstName",
+          "placeholder": "First Name",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Last Name",
+          "target": "signup.signUpFormDetails.lastName",
+        },
+        "ref": null,
+        "rendered": "Last Name",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.signUpFormDetails.lastName",
+          "label": Object {
+            "content": <Icon
+              as="i"
+              color="blue"
+              name="user"
+              size="small" />,
+          },
+          "labelPosition": "left",
+          "name": "lastName",
+          "placeholder": "Last Name",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Password",
+          "target": "signup.signUpFormDetails.password",
+        },
+        "ref": null,
+        "rendered": "Password",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.signUpFormDetails.password",
+          "label": Object {
+            "content": <Icon
+              as="i"
+              color="blue"
+              name="lock"
+              size="small" />,
+          },
+          "labelPosition": "left",
+          "name": "Password",
+          "placeholder": "Password",
+          "type": "password",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Email",
+          "target": "signup.signUpFormDetails.email",
+        },
+        "ref": null,
+        "rendered": "Email",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.signUpFormDetails.email",
+          "label": Object {
+            "content": <Icon
+              as="i"
+              color="blue"
+              name="envelope"
+              size="small" />,
+          },
+          "labelPosition": "left",
+          "name": "email",
+          "placeholder": "Email",
+          "type": "email",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Phone Number",
+          "target": "signup.signUpFormDetails.phoneNumber",
+        },
+        "ref": null,
+        "rendered": "Phone Number",
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "id": "signup.signUpFormDetails.phoneNumber",
+          "label": Object {
+            "content": <Icon
+              as="i"
+              color="blue"
+              name="phone"
+              size="small" />,
+          },
+          "labelPosition": "left",
+          "name": "phoneNumber",
+          "placeholder": "Phone Number",
+          "type": "number",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <label
+            target="signup.signUpFormDetails.firstName">
+            First Name
+</label>,
+          <Field
+            autoFocus={true}
+            component={[Function]}
+            id="signup.signUpFormDetails.firstName"
+            label={
+                        Object {
+                                    "content": <Icon
+                                      as="i"
+                                      color="blue"
+                                      name="user"
+                                      size="small" />,
+                                  }
+            }
+            labelPosition="left"
+            name="firstName"
+            placeholder="First Name"
+            value={undefined} />,
+          <label
+            target="signup.signUpFormDetails.lastName">
+            Last Name
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.signUpFormDetails.lastName"
+            label={
+                        Object {
+                                    "content": <Icon
+                                      as="i"
+                                      color="blue"
+                                      name="user"
+                                      size="small" />,
+                                  }
+            }
+            labelPosition="left"
+            name="lastName"
+            placeholder="Last Name"
+            value={undefined} />,
+          <label
+            target="signup.signUpFormDetails.password">
+            Password
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.signUpFormDetails.password"
+            label={
+                        Object {
+                                    "content": <Icon
+                                      as="i"
+                                      color="blue"
+                                      name="lock"
+                                      size="small" />,
+                                  }
+            }
+            labelPosition="left"
+            name="Password"
+            placeholder="Password"
+            type="password"
+            value="" />,
+          <label
+            target="signup.signUpFormDetails.email">
+            Email
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.signUpFormDetails.email"
+            label={
+                        Object {
+                                    "content": <Icon
+                                      as="i"
+                                      color="blue"
+                                      name="envelope"
+                                      size="small" />,
+                                  }
+            }
+            labelPosition="left"
+            name="email"
+            placeholder="Email"
+            type="email"
+            value="" />,
+          <label
+            target="signup.signUpFormDetails.phoneNumber">
+            Phone Number
+</label>,
+          <Field
+            component={[Function]}
+            id="signup.signUpFormDetails.phoneNumber"
+            label={
+                        Object {
+                                    "content": <Icon
+                                      as="i"
+                                      color="blue"
+                                      name="phone"
+                                      size="small" />,
+                                  }
+            }
+            labelPosition="left"
+            name="phoneNumber"
+            placeholder="Phone Number"
+            type="number"
+            value="" />,
+        ],
+        "component": "div",
+        "name": "signUpFormDetails",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "First Name",
+            "target": "signup.signUpFormDetails.firstName",
+          },
+          "ref": null,
+          "rendered": "First Name",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "autoFocus": true,
+            "component": [Function],
+            "id": "signup.signUpFormDetails.firstName",
+            "label": Object {
+              "content": <Icon
+                as="i"
+                color="blue"
+                name="user"
+                size="small" />,
+            },
+            "labelPosition": "left",
+            "name": "firstName",
+            "placeholder": "First Name",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Last Name",
+            "target": "signup.signUpFormDetails.lastName",
+          },
+          "ref": null,
+          "rendered": "Last Name",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.signUpFormDetails.lastName",
+            "label": Object {
+              "content": <Icon
+                as="i"
+                color="blue"
+                name="user"
+                size="small" />,
+            },
+            "labelPosition": "left",
+            "name": "lastName",
+            "placeholder": "Last Name",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Password",
+            "target": "signup.signUpFormDetails.password",
+          },
+          "ref": null,
+          "rendered": "Password",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.signUpFormDetails.password",
+            "label": Object {
+              "content": <Icon
+                as="i"
+                color="blue"
+                name="lock"
+                size="small" />,
+            },
+            "labelPosition": "left",
+            "name": "Password",
+            "placeholder": "Password",
+            "type": "password",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Email",
+            "target": "signup.signUpFormDetails.email",
+          },
+          "ref": null,
+          "rendered": "Email",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.signUpFormDetails.email",
+            "label": Object {
+              "content": <Icon
+                as="i"
+                color="blue"
+                name="envelope"
+                size="small" />,
+            },
+            "labelPosition": "left",
+            "name": "email",
+            "placeholder": "Email",
+            "type": "email",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Phone Number",
+            "target": "signup.signUpFormDetails.phoneNumber",
+          },
+          "ref": null,
+          "rendered": "Phone Number",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "id": "signup.signUpFormDetails.phoneNumber",
+            "label": Object {
+              "content": <Icon
+                as="i"
+                color="blue"
+                name="phone"
+                size="small" />,
+            },
+            "labelPosition": "left",
+            "name": "phoneNumber",
+            "placeholder": "Phone Number",
+            "type": "number",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenFourAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
