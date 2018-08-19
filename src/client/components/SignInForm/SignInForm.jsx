@@ -14,12 +14,20 @@ class SignInForm extends React.Component {
       signInDetails,
     } = this.props;
     return (
-      <Form onSubmit={handleSubmit} autoComplete="off"> 
-        <Form.Field inline required>
-         <SignInDetails signInDetails={signInDetails} />
-        </Form.Field>
-        <Button primary type="submit">Submit</Button>
-      </Form>
+        <Container>
+        <Grid>
+          <Grid.Row centered>
+            <Grid.Column width={6}>
+              <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} > 
+                <Form.Field >
+                <SignInDetails signInDetails={signInDetails} />
+                </Form.Field>
+                <Button primary type='signUp' disabled={pristine || submitting}>Sign In</Button>
+              </Form>
+              </Grid.Column>
+            </Grid.Row>
+        </Grid>
+        </Container>
     );
   }
 }
