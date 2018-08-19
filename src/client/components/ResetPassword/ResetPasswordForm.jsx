@@ -11,16 +11,24 @@ class ResetPasswordForm extends React.Component {
   render() {
     const {
       handleSubmit,
+      loading,
       resetPasswordDetails,
     } = this.props;
     return (
-      <Form onSubmit={handleSubmit} autoComplete="off"> 
-        <Form.Field inline required>
-         <PersonInfo personInfo={personInfo} />
-         <ResetPasswordDetails resetPasswordDetails={resetPasswordDetails} />
-        </Form.Field>
-        <Button primary type="submit">Submit</Button>
-      </Form>
+      <Container>
+        <Grid>
+          <Grid.Row centered>
+            <Grid.Column width={6}>
+              <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} > 
+                <Form.Field >
+                <ResetPasswordDetails resetPasswordDetails={resetPasswordDetails} />
+                </Form.Field>
+                <Button primary type='resetpassword' disabled={pristine || submitting}>Reset Password</Button>
+              </Form>
+              </Grid.Column>
+            </Grid.Row>
+        </Grid>
+        </Container>
     );
   }
 }

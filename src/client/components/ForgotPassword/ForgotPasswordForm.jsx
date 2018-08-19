@@ -14,12 +14,20 @@ class ForgotPasswordForm extends React.Component {
       forgotPassword,
     } = this.props;
     return (
-      <Form onSubmit={handleSubmit} autoComplete="off"> 
-        <Form.Field inline required>
-         <ForgotPasswordDetails forgotPassword={forgotPassword} />
-        </Form.Field>
-        <Button primary type="submit">Submit</Button>
-      </Form>
+      <Container>
+      <Grid>
+        <Grid.Row centered>
+          <Grid.Column width={6}>
+            <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} > 
+              <Form.Field >
+              <ForgotPasswordDetails forgotPassword={forgotPassword} />
+              </Form.Field>
+              <Button primary type='forgotpassword' disabled={pristine || submitting}>Forgot Password</Button>
+            </Form>
+            </Grid.Column>
+          </Grid.Row>
+      </Grid>
+      </Container>
     );
   }
 }
