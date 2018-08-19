@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import SignupForm from '../../components/SignupForm/SignupForm';
+import SignupForm from '../../components/SignUpForm/SignupForm';
 
 // event handling should be done here
 
