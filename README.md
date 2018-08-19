@@ -23,7 +23,7 @@ The whole project is split into *FIVE (5)* stages**:
 
 
 
-** If you wanna know where it's the project now ? in which stage somehow?... [Follow this link!](https://github.com/melitus/react-redux-nodejs-auth-system.git)   
+** If you wanna know where it's the project now ? in which stage somehow?... [Follow this link!](https://github.com/melitus/react-redux-nodejs-auth-system/projects)   
 
 
 ## Screenshot
@@ -62,4 +62,4 @@ Please adhere to code quality. We will appreciate codes to be written using es6,
 
 | Names of collaborators         | Github Links          | Remarks
 | ------------------ |:------------------- |:--------------
-| Felipe     | https://github.com/melitus | (Initiator - asmelitus@gmail.com)
+| Sunday     | https://github.com/melitus | (Initiator - asmelitus@gmail.com)
