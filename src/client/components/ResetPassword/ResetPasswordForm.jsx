@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
 import { reduxForm } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 
