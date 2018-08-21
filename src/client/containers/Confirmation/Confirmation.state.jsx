@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Confirmation from '../../pages/Confirmation/Confirmation';
+import Confirmation from '../../components/commons/Confirmation/Confirmation'
 
 export const mapDispatchToProps = {};
 
