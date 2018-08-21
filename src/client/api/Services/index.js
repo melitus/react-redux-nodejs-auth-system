@@ -1,5 +1,5 @@
-import { postAPI$, getAPI$, deleteAPI$, putAPI$ } from '../utils/ioUtils';
-import * as apiPaths from './Request/index';
+import { postAPI$, getAPI$, deleteAPI$, putAPI$ } from '../Requests/index';
+import * as apiPaths from '../ServiceTypes';
 
   const performRegistration$ = data =>
   postAPI$({ url: apiPaths.REGISTRATION, data: JSON.stringify(data) });

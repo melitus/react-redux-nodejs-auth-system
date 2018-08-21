@@ -1,34 +1,29 @@
-import { Observable } from 'rxjs';
+import { get$, post$, put$, remove$ } from '../../utils/rxjsUtils';
 
-import { fetchJSON } from './fetch';
+import { ROOT_PATH } from '../ServiceTypes/index';
 
-export const fetchJSON$ = (url, args) =>
-  Observable.fromPromise(fetchJSON(url, args));
+export const createPendingLoadDetails = () => ({
+  status: 'PENDING',
+});
 
-export const get$ = (url, args) =>
-  fetchJSON$(url, {
-    ...args,
-    method: 'GET',
-    httpsOptions: {}
-  });
+export const createSuccessLoadDetails = () => ({
+  status: 'SUCCESS',
+  cachedAt: Date.now(),
+});
 
-export const post$ = (url, args) =>
-  fetchJSON$(url, {
-    ...args,
-    method: 'POST',
-    httpsOptions: {}
-  });
+export const createErrorLoadDetails = error => ({
+  status: 'ERROR',
+  error
+});
 
-export const put$ = (url, args) =>
-  fetchJSON$(url, {
-    ...args,
-    method: 'PUT',
-    httpsOptions: {}
-  });
+export const getAPI$ = (url, args) =>
+  get$(`${ROOT_PATH}${url}`, args);
 
-export const remove$ = (url, args) =>
-  fetchJSON$(url, {
-    ...args,
-    method: 'DELETE',
-    httpsOptions: {}
-  });
+export const postAPI$ = (url, args) =>
+  post$(`${ROOT_PATH}${url}`, args);
+
+export const putAPI$ = (url, args) =>
+  put$(`${ROOT_PATH}${url}`, args);
+
+export const deleteAPI$ = (url, args) =>
+  remove$(`${ROOT_PATH}${url}`, args);
