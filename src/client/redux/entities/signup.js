@@ -24,11 +24,11 @@ export const SIGNUP_REQUEST_SUCCESS = createActionName('SIGNUP_REQUEST_SUCCESS')
 export const SIGNUP_REQUEST_ERROR = createActionName('SIGNUP_REQUEST_ERROR');
 
 // Action creators
+export const submit = createSubmit(FORM_NAME);
 export const doSignup = createActionWithPayload(DO_SIGNUP);
 export const transitToConfirmation = createActionWithPayload(TRANSIT_TO_CONFIRMATION);
 export const _requestSuccess = createActionWithPayload(SIGNUP_REQUEST_SUCCESS);
 export const _requestError = createActionWithPayload(SIGNUP_REQUEST_ERROR);
-export const submit = createSubmit(FORM_NAME);
 
 // Selectors
 export const selectSignupForm = getFormValues(FORM_NAME);
