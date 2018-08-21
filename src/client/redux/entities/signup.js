@@ -10,7 +10,16 @@ export const initialState = {
     lastName: '',
     email: '',
     password: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    isSubmitting: false,
+    submitError: false,
+    errors: {
+      firstName: [],
+      lastName: [],
+      email: [],
+      password: [],
+      password: [],
+}
 };
 
 const createActionName = name => `signup/${name}`;

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
+import { routerReducer as routing } from '../../../../../.cache/typescript/2.9/node_modules/@types/react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
 import { reducer as entities } from './branches/entities';

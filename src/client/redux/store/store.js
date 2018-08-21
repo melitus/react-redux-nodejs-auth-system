@@ -3,8 +3,8 @@ import { routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { ReduxObservable } from './utils';
-import initialState from './initialState';
+import { ReduxObservable } from '../utils';
+import initialState from './InitialStore/initialState';
 import reducers from './rootReducers';
 import rootEpic from './rootEpic';
 import devToolsEnhancer from './devToolsEnhancer';  // eslint-disable-line no-unused-vars
