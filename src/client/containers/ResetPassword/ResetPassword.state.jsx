@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 
 import ResetPasswordForm from '../../components/ResetPassword/ResetPasswordForm';
 
-
 // event handling should be done here
+const ResetPasswordFormContainer = props => <ResetPasswordForm {...props} />;
 
 export const mapDispatchToProps = () => ({
     onSubmit: () => dispatch({
@@ -15,4 +15,5 @@ export const mapStateToProps = state => ({
     resetPasswordDetails: selectResetPasswordDetails(state),
   });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordFormContainer);
+

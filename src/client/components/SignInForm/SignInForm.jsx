@@ -3,7 +3,8 @@ import { Button, Form } from 'semantic-ui-react';
 
 import SignInDetails from './SignInDetails/SignInDetails';
 
-const SignInForm = ({ handleSubmit, loading }) => {
+const SignInForm = (props) => {
+  const { handleSubmit, pristine, submitting, loading } = props;
     return (
         <Container>
         <Grid>
@@ -21,5 +22,10 @@ const SignInForm = ({ handleSubmit, loading }) => {
         </Container>
     );
 }
-
+    // Decorate the form component
+    SignInForm = reduxForm({
+      form: 'loginForm', // a unique name for this form
+      validate: loginValidation,
+    })(SignInForm);
+    
 export default SignInForm;

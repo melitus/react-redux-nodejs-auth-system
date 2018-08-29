@@ -1,18 +1,12 @@
-import React, { PropTypes } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 
 import ResetPasswordDetails from './ResetPasswordDetails/ResetPasswordDetails';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
-class ResetPasswordForm extends React.Component {
-
-  render() {
-    const {
-      handleSubmit,
-      loading,
-      resetPasswordDetails,
-    } = this.props;
+const ResetPasswordForm = (props) =>{
+    const { handleSubmit, loading, resetPasswordDetails } = props;
     return (
       <Container>
         <Grid>
@@ -29,7 +23,7 @@ class ResetPasswordForm extends React.Component {
         </Grid>
         </Container>
     );
-  }
+  
 }
 
 ResetPasswordForm = reduxForm({

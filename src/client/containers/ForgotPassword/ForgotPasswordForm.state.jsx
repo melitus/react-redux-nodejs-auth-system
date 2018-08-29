@@ -4,6 +4,7 @@ import ForgotPasswordForm from '../../components/ForgotPassword/ForgotPasswordFo
 
 
 // event handling should be done here
+const ForgetPasswordFormContainer = props => <ForgotPasswordForm {...props} />;
 
 export const mapDispatchToProps = () => ({
     onSubmit: () => dispatch({
@@ -14,5 +15,5 @@ export const mapDispatchToProps = () => ({
 export const mapStateToProps = state => ({
     forgotPasswordDetails: selectForgotPasswordDetails(state),
   });
-
-export default connect(mapStateToProps, mapDispatchToProps)(ForgotPasswordForm);
+  
+export default connect(mapStateToProps, mapDispatchToProps)(ForgetPasswordFormContainer);

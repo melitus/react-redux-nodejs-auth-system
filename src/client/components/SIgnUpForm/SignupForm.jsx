@@ -4,8 +4,8 @@ import { Form ,Container, Grid } from 'semantic-ui-react';
 
 import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
-const SignupForm = ({ handleSubmit,pristine, loading,submitting }) => {
-
+const SignupForm = (props) => {
+  const { handleSubmit, pristine, submitting, loading } = props;
     return (
   <Container>
     <Grid>
@@ -23,5 +23,9 @@ const SignupForm = ({ handleSubmit,pristine, loading,submitting }) => {
   </Container>
     );
 }
+SignupForm = reduxForm({
+  form: 'signUpForm',
+  //validate: signUpValidation,
+})(SignupForm);
 
 export default SignupForm;

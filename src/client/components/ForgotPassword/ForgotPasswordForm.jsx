@@ -1,17 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Button, Form } from 'semantic-ui-react';
 
 import ForgotPasswordDetails from './forgotPasswordDetail/ForgotPasswordDetails';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
-class ForgotPasswordForm extends React.Component {
-
-  render() {
-    const {
-      handleSubmit,
-      forgotPassword,
-    } = this.props;
+const ForgotPasswordForm = (props) => {
+    const { handleSubmit, pristine,submitting, loading } = props;
     return (
       <Container>
       <Grid>
@@ -28,12 +23,11 @@ class ForgotPasswordForm extends React.Component {
       </Grid>
       </Container>
     );
+  
   }
-}
-
-ForgotPasswordForm = reduxForm({
-  form: 'forgotPasswordForm',
-  validate: forgotPasswordValidation,
-})(ForgotPasswordForm);
+  ForgotPasswordForm = reduxForm({
+    form: 'forgotPasswordForm',
+    validate: forgotPasswordValidation,
+  })(ForgotPasswordForm);
 
 export default ForgotPasswordForm;
