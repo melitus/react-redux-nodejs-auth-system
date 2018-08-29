@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 
 import SignupForm from '../../components/SignUpForm/SignupForm';
 
-// event handling should be done here
+
+const SignupFormContainer = props => <SignupForm {...props} />;
+
 
 export const mapDispatchToProps = () => ({
     onSubmit: () => dispatch({
@@ -14,4 +16,10 @@ export const mapStateToProps = state => ({
     signUpDetails: selectSignUpDetails(state)
   });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);
+  // Decorate the form component
+SignInForm = reduxForm({
+  form: 'loginForm', // a unique name for this form
+  validate: loginValidation,
+})(SignInForm);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupFormContainer);
