@@ -14,4 +14,10 @@ export const mapStateToProps = state => ({
     loginDetails: selectLoginDetails(state),
   });
 
+    // Decorate the form component
+SignInForm = reduxForm({
+  form: 'loginForm', // a unique name for this form
+  validate: loginValidation,
+})(SignInForm);
+
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

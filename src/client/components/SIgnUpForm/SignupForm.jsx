@@ -1,19 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { reduxForm } from 'redux-form';
-import { Button, Form ,Container, Grid } from 'semantic-ui-react';
+import { Form ,Container, Grid } from 'semantic-ui-react';
 
 import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
-class SignupForm extends React.Component {
+const SignupForm = ({ handleSubmit,pristine, loading,submitting }) => {
 
-  render() {
-    const {
-      handleSubmit,
-      pristine, 
-      loading,
-      submitting,
-      signUpFormDetails
-    } = this.props;
     return (
   <Container>
     <Grid>
@@ -30,12 +22,6 @@ class SignupForm extends React.Component {
      </Grid>
   </Container>
     );
-  }
 }
-
-SignupForm = reduxForm({
-  form: 'signUpForm',
-  //validate: signUpValidation,
-})(SignupForm);
 
 export default SignupForm;
