@@ -1,12 +1,12 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import { Button, Form } from 'semantic-ui-react';
+import { Container, Grid, Form , Message} from 'semantic-ui-react';
 
 import ResetPasswordDetails from './ResetPasswordDetails/ResetPasswordDetails';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
 const ResetPasswordForm = (props) =>{
-    const { handleSubmit, loading, resetPasswordDetails } = props;
+    const { handleSubmit, loading, error } = props;
     return (
       <Container>
         <Grid>
@@ -16,7 +16,12 @@ const ResetPasswordForm = (props) =>{
                 <Form.Field >
                 <ResetPasswordDetails resetPasswordDetails={resetPasswordDetails} />
                 </Form.Field>
-                <Button primary type='resetpassword' disabled={pristine || submitting}>Reset Password</Button>
+                {error && (
+                <Message negative>
+                <p>{error}</p>
+                </Message>
+                 )}
+                <Form.Button primary type='resetpassword' disabled={pristine || submitting}>Reset Password</Button>
               </Form>
               </Grid.Column>
             </Grid.Row>

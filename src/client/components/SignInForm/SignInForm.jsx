@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Container,Grid, Form, Message } from 'semantic-ui-react';
 
 import SignInDetails from './SignInDetails/SignInDetails';
 
 const SignInForm = (props) => {
-  const { handleSubmit, pristine, submitting, loading } = props;
+  const { handleSubmit, pristine, submitting, loading, error } = props;
     return (
         <Container>
         <Grid>
@@ -14,7 +14,12 @@ const SignInForm = (props) => {
                 <Form.Field >
                 <SignInDetails signInDetails={signInDetails} />
                 </Form.Field>
-                <Button primary type='signUp' disabled={pristine || submitting}>Sign In</Button>
+                {error && (
+                <Message negative>
+                <p>{error}</p>
+                </Message>
+                )}
+                <Form.Button primary type='signUp' disabled={pristine || submitting}>Sign In</Button>
               </Form>
               </Grid.Column>
             </Grid.Row>

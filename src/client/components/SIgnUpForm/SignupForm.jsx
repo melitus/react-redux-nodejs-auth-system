@@ -1,11 +1,11 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import { Form ,Container, Grid } from 'semantic-ui-react';
+import { Form ,Container, Grid, Message } from 'semantic-ui-react';
 
 import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
 const SignupForm = (props) => {
-  const { handleSubmit, pristine, submitting, loading } = props;
+  const { handleSubmit, pristine, submitting, loading, error } = props;
     return (
   <Container>
     <Grid>
@@ -15,6 +15,11 @@ const SignupForm = (props) => {
             <Form.Field >
             <SignUpFormDetails signUpFormDetails={signUpFormDetails} />
             </Form.Field>
+            {error && (
+          <Message negative>
+            <p>{error}</p>
+          </Message>
+            )}
             <Form.Button primary type='signUp' disabled={pristine || submitting}>Sign Up</Form.Button>
            </Form>
           </Grid.Column>
