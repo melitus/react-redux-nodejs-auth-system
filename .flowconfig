@@ -1,11 +1,31 @@
 [ignore]
+.*/node_modules/.*
+.*/build/.*
+.*/webpack\.config\.js
+.*/tools/.*
+.*/lib/.*
 
 [include]
 
+
 [libs]
+flow-typed
+./src/interfaces/cssModule.js
 
 [lints]
+# all=off by default
+all=warn
+untyped-type-import=error
+sketchy-null-bool=off
 
 [options]
+module.name_mapper='^react-.*' -> '<PROJECT_ROOT>/src'
+module.name_mapper='.+\.s?css' -> 'cssModule'
+module.system=haste
+module.file_ext=.css
+module.file_ext=.scss
+module.file_ext=.sass
+module.file_ext=.scss.module
+include_warnings=true
 
 [strict]
