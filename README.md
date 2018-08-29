@@ -24,7 +24,7 @@ The whole project is split into *FIVE (5)* stages**:
 
 
 
-** If you wanna know where it's the project now ? in which stage somehow?... [Follow this link!](https://github.com/melitus/react-redux-nodejs-auth-system/projects)   
+** If you want to know where the project is at the moment? in which stage somehow?... [Follow this link!](https://github.com/melitus/react-redux-nodejs-auth-system/projects)   
 
 
 ## Screenshot
