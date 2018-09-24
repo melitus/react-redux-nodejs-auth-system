@@ -2,14 +2,14 @@
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
 import type { Node } from "react";
-import {  Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 // import { LabelInputField } from 'react-semantic-redux-form';
 import { LabelInputField } from '../../Field/index'
 
 type SignUpFormDetailsProp = {
-  firstname?: string,
-  lastname?: string,
+  firstName?: string,
+  lastName?: string,
   password?: number,
   email: string,
   phoneNumber: number,
@@ -17,13 +17,13 @@ type SignUpFormDetailsProp = {
 
 const SignUpFormDetails = ({ firstName, lastName, password, email, phoneNumber } : SignUpFormDetailsProp) => (
   <FormSection name="signUpFormDetails">
-  <label target="signup.signUpFormDetails.firstName">First Name</label>
+    <label target="signup.signUpFormDetails.firstName">First Name</label>
     <Field
       id="signup.signUpFormDetails.firstName"
       name="firstName"
       component={LabelInputField}
-      label={{ content: <Icon color='blue' name='user' size='small' /> }}
-      labelPosition='left'
+      label={{ content: <Icon color="blue" name="user" size="small" /> }}
+      labelPosition="left"
       placeholder="First Name"
       value={firstName}
       autoFocus
@@ -34,8 +34,8 @@ const SignUpFormDetails = ({ firstName, lastName, password, email, phoneNumber }
       id="signup.signUpFormDetails.lastName"
       name="lastName"
       component={LabelInputField}
-      label={{ content: <Icon color='blue' name='user' size='small' /> }}
-      labelPosition='left'
+      label={{ content: <Icon color="blue" name="user" size="small" /> }}
+      labelPosition="left"
       placeholder="Last Name"
       value={lastName}
     />
@@ -45,9 +45,9 @@ const SignUpFormDetails = ({ firstName, lastName, password, email, phoneNumber }
       id="signup.signUpFormDetails.password"
       name="Password"
       component={LabelInputField}
-      label={{ content: <Icon color='blue' name='lock' size='small' /> }}
-      labelPosition='left'
-      placeholder="Password"
+      label={{ content: <Icon color="blue" name="lock" size="small" /> }}
+      labelPosition="left"
+      placeholder="••••••••••"
       type="password"
       value={password}
     />
@@ -57,8 +57,8 @@ const SignUpFormDetails = ({ firstName, lastName, password, email, phoneNumber }
       id="signup.signUpFormDetails.email"
       name="email"
       component={LabelInputField}
-      label={{ content: <Icon color='blue' name='envelope' size='small' /> }}
-      labelPosition='left'
+      label={{ content: <Icon color="blue" name="envelope" size="small" /> }}
+      labelPosition="left"
       placeholder="Email"
       type="email"
       value={email}
@@ -69,8 +69,8 @@ const SignUpFormDetails = ({ firstName, lastName, password, email, phoneNumber }
       id="signup.signUpFormDetails.phoneNumber"
       name="phoneNumber"
       component={LabelInputField}
-      label={{ content: <Icon color='blue' name='phone' size='small' /> }}
-      labelPosition='left'
+      label={{ content: <Icon color="blue" name="phone" size="small" /> }}
+      labelPosition="left"
       placeholder="Phone Number"
       type="number"
       value={phoneNumber}

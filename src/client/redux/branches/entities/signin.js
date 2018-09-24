@@ -13,7 +13,7 @@ const initialState = {
   submitError: false,
   errorMessage: '',
   errors: {}
-}
+};
 
 const createActionName = name => `signin/${name}`;
 
@@ -21,22 +21,29 @@ const createActionName = name => `signin/${name}`;
 // Actions
 export const FORM_NAME = 'form/SIGNIN_FORM';
 export const DO_SIGNIN = createActionName('DO_SIGNIN');
-export const TRANSIT_TO_CONFIRMATION = createActionName('TRANSIT_TO_CONFIRMATION');
-export const SIGNIN_REQUEST_SUCCESS = createActionName('SIGNIN_REQUEST_SUCCESS');
+export const TRANSIT_TO_CONFIRMATION = createActionName(
+  'TRANSIT_TO_CONFIRMATION'
+);
+export const TOGGLE_KEEP_LOGGED_IN = createActionName('TOGGLE_KEEP_LOGGED_IN');
+export const SIGNIN_REQUEST_SUCCESS = createActionName(
+  'SIGNIN_REQUEST_SUCCESS'
+);
 export const SIGNIN_REQUEST_ERROR = createActionName('SIGNIN_REQUEST_ERROR');
 
 // Action creators
 export const submit = createSubmit(FORM_NAME);
 export const doSIGNIN = createActionWithPayload(DO_SIGNIN);
-export const transitToConfirmation = createActionWithPayload(TRANSIT_TO_CONFIRMATION);
+export const transitToConfirmation = createActionWithPayload(
+  TRANSIT_TO_CONFIRMATION
+);
 export const _requestSuccess = createActionWithPayload(SIGNIN_REQUEST_SUCCESS);
 export const _requestError = createActionWithPayload(SIGNIN_REQUEST_ERROR);
 
 // Selectors
-export const selectSIGNINForm = getFormValues(FORM_NAME);
+export const selectSignInForm = getFormValues(FORM_NAME);
 
-export const selectSIGNINDetails = createSelector(
-  selectSIGNINForm,
+export const selectSignInDetails = createSelector(
+  selectSignInForm,
   form => form.SIGNINDetails
 );
 
@@ -44,19 +51,16 @@ export const selectSIGNINDetails = createSelector(
 export const reducer = handleActions(
   {
     [SIGNIN_REQUEST_SUCCESS]: (state, { payload }) => ({
-      ...payload,
-    }),
+      ...payload
+    })
   },
   initialState
 );
 
 // DispatchpersonInfo
-export const onSubmit = ({ SIGNINDetails }, dispatch) => (
+export const onSubmit = ({ SIGNINDetails }, dispatch) =>
   new Promise((resolve) => {
     resolve();
     // const { SIGNINDetails } = payload;
-    dispatch(doSIGNIN({  ...SIGNINDetails }));
-  })
-);
-
-
+    dispatch(doSIGNIN({ ...SIGNINDetails }));
+  });

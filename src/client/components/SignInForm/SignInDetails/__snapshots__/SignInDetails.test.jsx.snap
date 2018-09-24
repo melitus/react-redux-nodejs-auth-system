@@ -37,7 +37,7 @@ ShallowWrapper {
           component={undefined}
           id="signup.signinDetail.password"
           name="password"
-          placeholder="Password"
+          placeholder="••••••••••"
           type="password"
           value="" />,
       ],
@@ -94,7 +94,7 @@ ShallowWrapper {
           "component": undefined,
           "id": "signup.signinDetail.password",
           "name": "password",
-          "placeholder": "Password",
+          "placeholder": "••••••••••",
           "type": "password",
           "value": "",
         },
@@ -131,7 +131,7 @@ ShallowWrapper {
             component={undefined}
             id="signup.signinDetail.password"
             name="password"
-            placeholder="Password"
+            placeholder="••••••••••"
             type="password"
             value="" />,
         ],
@@ -188,7 +188,7 @@ ShallowWrapper {
             "component": undefined,
             "id": "signup.signinDetail.password",
             "name": "password",
-            "placeholder": "Password",
+            "placeholder": "••••••••••",
             "type": "password",
             "value": "",
           },

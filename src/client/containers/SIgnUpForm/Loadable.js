@@ -1,8 +1,8 @@
-import React from 'react';
-import Loadable from 'react-loadable';
+import React from "react";
+import Loadable from "react-loadable";
 
 const SignUpLoadable = Loadable({
-  loader: () => import('./SignupForm.state'),
+  loader: () => import("./SignupForm.state"),
   loading: () => <div>Loading</div>
 });
 

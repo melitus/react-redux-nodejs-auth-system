@@ -1,5 +1,5 @@
 import React from 'react';
-import SignupForm from '../../containers/SignUpForm/SignupForm.state';
+import SignupForm from '../../containers/SIgnUpForm/SignupForm.state';
 
 const SignupPage = () => (
   <section>

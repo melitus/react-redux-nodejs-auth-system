@@ -1,8 +1,8 @@
-import React from 'react';
-import Loadable from 'react-loadable';
+import React from "react";
+import Loadable from "react-loadable";
 
 const SignInLoadable = Loadable({
-  loader: () => import('./SignInForm.state'),
+  loader: () => import("./SignInForm.state"),
   loading: () => <div>Loading</div>
 });
 

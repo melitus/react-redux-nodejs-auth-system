@@ -1,22 +1,23 @@
-import { handleActions } from "redux-actions";
+import { handleActions } from 'redux-actions';
 
 import {
-  SIGNUP_REQUEST_SUCCESS,
-  SIGNUP_REQUEST_ERROR
-} from "../entities/signup";
+  SIGNIN_REQUEST_SUCCESS,
+  SIGNIN_REQUEST_ERROR
+} from '../entities/signup';
 
 import {
   createSuccessLoadDetails,
   createErrorLoadDetails
-} from "../../utils/actionErrors";
+} from '../../utils/actionErrors';
 
 export const initialState = {};
+
 export const reducer = handleActions(
   {
-    [SIGNUP_REQUEST_SUCCESS]: (state, { payload }) => ({
+    [SIGNIN_REQUEST_SUCCESS]: (state, { payload }) => ({
       loadDetails: createSuccessLoadDetails(payload)
     }),
-    [SIGNUP_REQUEST_ERROR]: (state, { payload }) => ({
+    [SIGNIN_REQUEST_ERROR]: (state, { payload }) => ({
       loadDetails: createErrorLoadDetails(payload.error)
     })
   },

@@ -10,8 +10,8 @@ import { Provider } from 'react-redux';
 import bodyParser from 'body-parser';
 
 import template from './views/template.handlebars';
-import App from '../client/components/App';
-import rootReducers from '../client/redux/rootReducers';
+import App from '../client/components/App/App';
+import rootReducers from '../client/redux/store/rootReducers';
 
 // Initialize http server
 const app = express();

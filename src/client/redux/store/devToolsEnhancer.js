@@ -4,9 +4,9 @@ const noop = next => next;
 let devToolsEnhancer = noop;
 
 if (
-  process.env.NODE_ENV === 'development' &&
-  typeof window === 'object' &&
-  typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined'
+  process.env.NODE_ENV === "development" &&
+  typeof window === "object" &&
+  typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined"
 ) {
   devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__();
 }

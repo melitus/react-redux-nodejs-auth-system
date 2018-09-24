@@ -2,10 +2,9 @@ import enzyme, { render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15.4';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 import LayoutContainer from './Layout.state';
-import { createStore } from 'redux';
 
 enzyme.configure({ adapter: new Adapter() });
 

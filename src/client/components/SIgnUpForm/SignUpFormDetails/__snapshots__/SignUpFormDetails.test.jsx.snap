@@ -80,7 +80,7 @@ ShallowWrapper {
           }
           labelPosition="left"
           name="Password"
-          placeholder="Password"
+          placeholder="••••••••••"
           type="password"
           value="" />,
         <label
@@ -230,7 +230,7 @@ ShallowWrapper {
           },
           "labelPosition": "left",
           "name": "Password",
-          "placeholder": "Password",
+          "placeholder": "••••••••••",
           "type": "password",
           "value": "",
         },
@@ -379,7 +379,7 @@ ShallowWrapper {
             }
             labelPosition="left"
             name="Password"
-            placeholder="Password"
+            placeholder="••••••••••"
             type="password"
             value="" />,
           <label
@@ -529,7 +529,7 @@ ShallowWrapper {
             },
             "labelPosition": "left",
             "name": "Password",
-            "placeholder": "Password",
+            "placeholder": "••••••••••",
             "type": "password",
             "value": "",
           },

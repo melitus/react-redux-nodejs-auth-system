@@ -1,8 +1,8 @@
-import React from 'react';
-import Loadable from 'react-loadable';
+import React from "react";
+import Loadable from "react-loadable";
 
 const ResetPasswordLoadable = Loadable({
-  loader: () => import('./ResetPassword.state'),
+  loader: () => import("./ResetPassword.state"),
   loading: () => <div>Loading</div>
 });
 

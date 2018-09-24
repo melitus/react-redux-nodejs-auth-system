@@ -1,10 +1,16 @@
 // @flow
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
+import type { Node } from "react";
 
 import { Input } from '../../Field/index';
 
-const ResetPasswordDetails = ({ password, confirmPassword }) => (
+type ResetPasswordFormDetailsProp = {
+  password?: number,
+  confirmPassword: string,
+};
+
+const ResetPasswordDetails = ({ password, confirmPassword }: ResetPasswordFormDetailsProp) => (
   <FormSection name="resetPasswordDetails">
     <label target="resetPasswordForm.resetPasswordDetails.password">Password</label>
     <Field

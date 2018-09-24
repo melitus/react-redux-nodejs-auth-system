@@ -1,10 +1,16 @@
 // @flow
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
+import type { Node } from "react";
 
 import { Input } from '../../Field/index';
 
-const SignInDetails = ({ email, password }) => (
+type SignInFormDetailsProp = {
+  password?: number,
+  email: string,
+};
+
+const SignInDetails = ({ email, password }: SignInFormDetailsProp) => (
   <FormSection name="signInDetails">
     <label target="signin.signInDetails.email">Email</label>
     <Field
@@ -21,7 +27,7 @@ const SignInDetails = ({ email, password }) => (
       id="signup.signinDetail.password"
       name="password"
       component={Input}
-      placeholder="Password"
+      placeholder="••••••••••"
       type="password"
       value={password}
     />

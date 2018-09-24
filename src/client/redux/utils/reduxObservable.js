@@ -1,4 +1,4 @@
-import * as ReduxObservable from 'redux-observable';
+import * as ReduxObservable from "redux-observable";
 
 class ActionsObservable extends ReduxObservable.ActionsObservable {
   lift(operator) {
@@ -9,7 +9,4 @@ class ActionsObservable extends ReduxObservable.ActionsObservable {
   }
 }
 
-export {
-  ReduxObservable,
-  ActionsObservable,
-};
+export { ReduxObservable, ActionsObservable };

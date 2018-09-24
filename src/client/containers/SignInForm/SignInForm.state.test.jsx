@@ -2,12 +2,11 @@ import enzyme, { render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15.4';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import { reducer as form } from 'redux-form';
-import { createStore } from 'redux';
 
-import SignInFormContainer from './SignInForm.state';
-import {  selectSignInDetails } from '../../redux/branches/forms/signInpForm';
+import { SignInFormContainer } from './SignInForm.state';
+import { selectSignInDetails } from '../../redux/branches/entities/signin';
 import { reducer as entities } from '../../redux/branches/entities';
 
 enzyme.configure({ adapter: new Adapter() });

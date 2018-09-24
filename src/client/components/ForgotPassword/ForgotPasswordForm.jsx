@@ -6,33 +6,30 @@ import ForgotPasswordDetails from './forgotPasswordDetail/ForgotPasswordDetails'
 import forgotPasswordValidation from './forgotPasswordValidation';
 
 const ForgotPasswordForm = (props) => {
-    const { handleSubmit, pristine,submitting, loading, error } = props;
-    return (
-      <Container>
+  const { handleSubmit, pristine, submitting, loading, error } = props;
+  return (
+    <Container>
       <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
-            <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} > 
+            <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
               <Form.Field >
-              <ForgotPasswordDetails forgotPassword={forgotPassword} />
+                <ForgotPasswordDetails forgotPassword={ForgotPasswordDetails} />
               </Form.Field>
               {error && (
               <Message negative>
-              <p>{error}</p>
+                <p>{error}</p>
               </Message>
               )}
-              <Form.Button primary type='forgotpassword' disabled={pristine || submitting}>Forgot Password</Button>
+              <Form.Button primary type="forgotpassword" disabled={pristine || submitting}>Forgot Password</Form.Button>
             </Form>
-            </Grid.Column>
-          </Grid.Row>
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
-      </Container>
-    );
-  
-  }
-  ForgotPasswordForm = reduxForm({
-    form: 'forgotPasswordForm',
-    validate: forgotPasswordValidation,
-  })(ForgotPasswordForm);
-
-export default ForgotPasswordForm;
+    </Container>
+  );
+};
+export default reduxForm({
+  form: 'forgotPasswordForm',
+  validate: forgotPasswordValidation,
+})(ForgotPasswordForm);

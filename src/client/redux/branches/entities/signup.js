@@ -6,20 +6,20 @@ import { getFormValues, submit as createSubmit } from 'redux-form';
 import { createActionWithPayload } from '../../utils/';
 
 export const initialState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    phoneNumber: '',
-    isSubmitting: false,
-    submitError: false,
-    errors: {
-      firstName: [],
-      lastName: [],
-      email: [],
-      password: [],
-      password: [],
-}
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  phoneNumber: '',
+  isSubmitting: false,
+  submitError: false,
+  errors: {
+    firstName: [],
+    lastName: [],
+    email: [],
+    password: [],
+    phoneNumber: []
+  }
 };
 
 const createActionName = name => `signup/${name}`;
@@ -28,14 +28,20 @@ const createActionName = name => `signup/${name}`;
 // Actions
 export const FORM_NAME = 'form/SIGNUP_FORM';
 export const DO_SIGNUP = createActionName('DO_SIGNUP');
-export const TRANSIT_TO_CONFIRMATION = createActionName('TRANSIT_TO_CONFIRMATION');
-export const SIGNUP_REQUEST_SUCCESS = createActionName('SIGNUP_REQUEST_SUCCESS');
+export const TRANSIT_TO_CONFIRMATION = createActionName(
+  'TRANSIT_TO_CONFIRMATION'
+);
+export const SIGNUP_REQUEST_SUCCESS = createActionName(
+  'SIGNUP_REQUEST_SUCCESS'
+);
 export const SIGNUP_REQUEST_ERROR = createActionName('SIGNUP_REQUEST_ERROR');
 
 // Action creators
 export const submit = createSubmit(FORM_NAME);
 export const doSignup = createActionWithPayload(DO_SIGNUP);
-export const transitToConfirmation = createActionWithPayload(TRANSIT_TO_CONFIRMATION);
+export const transitToConfirmation = createActionWithPayload(
+  TRANSIT_TO_CONFIRMATION
+);
 export const _requestSuccess = createActionWithPayload(SIGNUP_REQUEST_SUCCESS);
 export const _requestError = createActionWithPayload(SIGNUP_REQUEST_ERROR);
 
@@ -51,19 +57,16 @@ export const selectSignUpDetails = createSelector(
 export const reducer = handleActions(
   {
     [SIGNUP_REQUEST_SUCCESS]: (state, { payload }) => ({
-      ...payload,
-    }),
+      ...payload
+    })
   },
   initialState
 );
 
 // DispatchpersonInfo
-export const onSubmit = ({ signUpDetails }, dispatch) => (
+export const onSubmit = ({ signUpDetails }, dispatch) =>
   new Promise((resolve) => {
     resolve();
     // const { signUpDetails } = payload;
-    dispatch(doSignup({  ...signUpDetails }));
-  })
-);
-
-
+    dispatch(doSignup({ ...signUpDetails }));
+  });

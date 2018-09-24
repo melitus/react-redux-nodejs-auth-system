@@ -1,10 +1,15 @@
 // @flow
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
+import type { Node } from "react";
 
 import { Input } from '../../Field/index';
 
-const ForgotPasswordDetails = ({ email }) => (
+type ForgotPasswordFormDetailsProp = {
+  email?: number,
+};
+
+const ForgotPasswordDetails = ({ email }: ForgotPasswordFormDetailsProp) => (
   <FormSection name="forgotPassword">
     <label target="forgotPassword.forgotPasswordDetails.email">Email</label>
     <Field
@@ -19,7 +24,7 @@ const ForgotPasswordDetails = ({ email }) => (
 );
 
 ForgotPasswordDetails.defaultProps = {
-  password: '',
+  email: '',
 };
 
 export default ForgotPasswordDetails;
