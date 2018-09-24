@@ -1,7 +1,7 @@
-import memoize from "lru-memoize";
-import { createValidator, required, email } from "../../utils/validation";
+import memoize from 'lru-memoize';
+import { createValidator, required, email } from '../../utils/validation';
 
 const forgotPasswordValidation = createValidator({
-  password: required
+  email: [email, required]
 });
 export default memoize(10)(forgotPasswordValidation);

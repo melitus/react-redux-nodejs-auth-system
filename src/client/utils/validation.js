@@ -1,69 +1,91 @@
-const isEmpty = value => value === undefined || value === null || value === "";
-const join = rules => (value, data, params) =>
-  rules.map(rule => rule(value, data, params)).filter(error => !!error)[0];
+const isEmpty = value => value === undefined || value === null || value === '';
+const isPhoneEmpty = value =>
+  value === undefined || value === null || value === '' || value === '+'; 
 
-export const email = value => {
+const join = rules => (value, data, params) => rules.map(rule => rule(value, data, params)).filter(error => !!error)[0];
+
+export function checkEmail(value) {
   // Let's not start a debate on email regex. This is just for an example app!
-  if (
-    !isEmpty(value) &&
-    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-  ) {
-    return "Invalid email address";
+  if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+    return 'Invalid email address';
   }
-};
+}
 
-export const requiredInput = input => (input ? undefined : `Input is required`);
+export function email(value) {
+  if (!isEmpty(value) && checkEmail(value)) {
+    return {
+      text: 'enter the valid email address',
+      intlKey: 'errors.invalid_email_address',
+      values: {}
+    };
+  }
+}
 
-export const correctInput = input =>
-  input !== "rajat" ? "Incorrect Username" : undefined;
+export function isEmail(value) {
+  if (!isEmpty(value) && checkEmail(value)) {
+    return false;
+  }
+  return true;
+}
 
-export const isRequired = value => {
+
+export function required(value) {
   if (isEmpty(value)) {
-    return `${fieldName} is required`;
+    return 'Required';
   }
-};
+}
 
-export const minLength = min => {
+export function requiredPhone(value) {
+  if (isPhoneEmpty(value)) {
+    return {
+      text: 'Required field',
+      intlKey: 'errors.required_field',
+      values: {}
+    };
+  }
+}
+
+export function minLength(min) {
   return value => {
     if (!isEmpty(value) && value.length < min) {
-      return `${value} must be at least ${min} characters`;
+      return `Must be at least ${min} characters`;
     }
   };
-};
+}
 
-export const maxLength = max => {
+export function maxLength(max) {
   return value => {
     if (!isEmpty(value) && value.length > max) {
-      return `${value} must be no more than ${max} characters`;
+      return `Must be no more than ${max} characters`;
     }
   };
-};
+}
 
-export const integer = value => {
+export function integer(value) {
   if (!isEmpty(value) && !Number.isInteger(Number(value))) {
-    return "Must be an integer";
+    return 'Must be an integer';
   }
-};
+}
 
-export const oneOf = enumeration => {
+export function oneOf(enumeration) {
   return value => {
     if (!enumeration.includes(value)) {
-      return `Must be one of: ${enumeration.join(", ")}`;
+      return `Must be one of: ${enumeration.join(', ')}`;
     }
   };
-};
+}
 
-export const mustMatch = field => {
+export function match(field) {
   return (value, data) => {
     if (data) {
       if (value !== data[field]) {
-        return `${value} must match ${field}`;
+        return 'Do not match';
       }
     }
   };
-};
+}
 
-export const createValidator = (rules, params) => {
+export function createValidator(rules, params) {
   return (data = {}) => {
     const errors = {};
     Object.keys(rules).forEach(key => {
@@ -75,4 +97,4 @@ export const createValidator = (rules, params) => {
     });
     return errors;
   };
-};
+}

@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
-import type { Node } from "react";
 
 import { Input } from '../../Field/index';
 

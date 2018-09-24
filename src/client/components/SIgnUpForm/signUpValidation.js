@@ -3,12 +3,13 @@ import {
   createValidator,
   required,
   email,
-  integer
+  integer,
+  minLength
 } from '../../utils/validation';
 
 const signUpValidation = createValidator({
   email: [email, required],
-  password: required,
+  password: [required, minLength(6)],
   phoneNo: [integer, required],
   firstname: required,
   lastname: required

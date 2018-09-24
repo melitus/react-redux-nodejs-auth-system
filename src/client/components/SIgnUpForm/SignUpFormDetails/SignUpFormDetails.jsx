@@ -1,11 +1,10 @@
 // @flow
 import React from 'react';
 import { Field, FormSection } from 'redux-form';
-import type { Node } from "react";
 import { Icon } from 'semantic-ui-react';
 
 // import { LabelInputField } from 'react-semantic-redux-form';
-import { LabelInputField } from '../../Field/index'
+import { LabelInputField } from '../../Field/index';
 
 type SignUpFormDetailsProp = {
   firstName?: string,
