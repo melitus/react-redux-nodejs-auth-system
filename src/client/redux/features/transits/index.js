@@ -1,5 +1,5 @@
-import { ReduxObservable } from "../../utils";
+import { ReduxObservable } from '../../utils';
 
-import fromSignup from "./fromSignup";
+import fromSignup from './fromSignup';
 
 export default ReduxObservable.combineEpics(fromSignup);

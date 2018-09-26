@@ -1,4 +1,4 @@
-//@flow
+// @flow
 import React from 'react';
 import type { Node as ReactNode, ComponentType } from 'react';
 
