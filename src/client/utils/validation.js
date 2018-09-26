@@ -1,6 +1,7 @@
 const isEmpty = value => value === undefined || value === null || value === '';
+
 const isPhoneEmpty = value =>
-  value === undefined || value === null || value === '' || value === '+'; 
+  value === undefined || value === null || value === '' || value === '+';
 
 const join = rules => (value, data, params) => rules.map(rule => rule(value, data, params)).filter(error => !!error)[0];
 
@@ -9,6 +10,7 @@ export function checkEmail(value) {
   if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
     return 'Invalid email address';
   }
+  return true;
 }
 
 export function email(value) {

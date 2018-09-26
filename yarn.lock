@@ -6772,10 +6772,6 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-sane-email-validation@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/sane-email-validation/-/sane-email-validation-1.1.0.tgz#c8c2a1fde011ccbbfd7729d84a8990b373003d5a"
-
 sane@~1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/sane/-/sane-1.4.1.tgz#88f763d74040f5f0c256b6163db399bf110ac715"
