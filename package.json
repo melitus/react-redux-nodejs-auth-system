@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-nodejs-login-app",
+  "name": "react-redux-nodejs-auth-system",
   "version": "0.0.1",
   "description": "nodejs react redux auth system",
   "main": "build/dist/assignments",
@@ -90,6 +90,7 @@
     "knex": "^0.14.5",
     "lru-memoize": "^1.0.2",
     "qs": "6.5.1",
+    "raven-js": "^3.26.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-loadable": "^5.5.0",
@@ -108,11 +109,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org:craftturf/ctt-modal.git#master"
+    "url": "git+ssh://git@https://github.com/melitus/react-redux-nodejs-auth-system.git#master"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "npm@craftturf.com",
+  "author": "Aroh Sunday",
   "license": "ISC"
 }
