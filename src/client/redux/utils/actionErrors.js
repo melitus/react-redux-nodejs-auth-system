@@ -1,13 +1,14 @@
 export const createPendingLoadDetails = () => ({
-  status: "PENDING"
+  status: 'PENDING'
 });
 
 export const createSuccessLoadDetails = () => ({
-  status: "SUCCESS",
-  cachedAt: Date.now()
+  status: 'SUCCESS',
+  cachedAt: new Date().toISOString(),
+
 });
 
 export const createErrorLoadDetails = error => ({
-  status: "ERROR",
+  status: 'ERROR',
   error
 });

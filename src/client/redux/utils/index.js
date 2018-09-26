@@ -1,4 +1,4 @@
-import { ReduxObservable, ActionsObservable } from "./reduxObservable";
+import { ReduxObservable, ActionsObservable } from './reduxObservable';
 
 const createActionWithPayload = type => payload => ({ type, payload });
 
