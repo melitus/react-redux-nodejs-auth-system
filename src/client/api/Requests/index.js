@@ -1,6 +1,6 @@
-import { get$, post$, put$, remove$ } from "../../utils/rxjsUtils";
+import { get$, post$, put$, remove$ } from '../../utils/rxjsUtils';
 
-import { ROOT_PATH } from "../ServiceTypes/index";
+import { ROOT_PATH } from '../ServiceTypes/index';
 
 export const getAPI$ = (url, args) => get$(`${ROOT_PATH}${url}`, args);
 
