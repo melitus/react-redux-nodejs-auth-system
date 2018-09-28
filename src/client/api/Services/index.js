@@ -1,27 +1,28 @@
-import { postAPI$, getAPI$, /* deleteAPI$,*/ putAPI$ } from '../Requests/index';
-import * as apiPaths from '../ServiceTypes';
+import { postAPI$, /* getAPI$,  deleteAPI$,*/ putAPI$ } from '../Requests/index';
+import * as apiPathsRoot from '../ServiceTypes';
+
+const apiPaths = apiPathsRoot.children;
 
 const performRegistration$ = data =>
-  postAPI$({ url: apiPaths.REGISTRATION, data: JSON.stringify(data) });
+  postAPI$({ url: apiPaths.signup.path, data: JSON.stringify(data) });
 
 const performLogin$ = data =>
-  postAPI$({ url: apiPaths.LOGIN, data: JSON.stringify(data) });
+  postAPI$({ url: apiPaths.signin.path, data: JSON.stringify(data) });
 
 const confirmRegistration$ = data =>
-  postAPI$({ url: apiPaths.REGITRATION_CONFIRMATION, data });
+  postAPI$({ url: apiPaths.confirmregistration.path, data });
 
-const updateUserInformation$ = data => putAPI$({ url: apiPaths.USER, ...data });
+const updateUserInformation$ = data => putAPI$({ url: apiPaths.user.path, ...data });
 
-const changePassword$ = data =>
-  putAPI$({ url: apiPaths.CHANGE_PASSWORD, ...data });
+const resetPassword$ = data =>
+  putAPI$({ url: apiPaths.resetpassword.path, ...data });
 
-const getUploadedData$ = () => getAPI$({ url: apiPaths.UPLOADED });
+const forgotPassword$ = data =>
+  putAPI$({ url: apiPaths.resetpassword.path, ...data });
 
-const requestToJoin$ = data =>
-  postAPI$({ url: apiPaths.JOIN_REQUEST, ...data });
 
 const getUsersInfos$ = (value, token) => postAPI$({
-  url: apiPaths.GET_USERS_INFORMATIONS,
+  url: apiPaths.userinfo.path,
   headers: {
     Authorization: `JWT ${token}`,
     'Content-Type': 'application/json'
@@ -29,31 +30,12 @@ const getUsersInfos$ = (value, token) => postAPI$({
   data: JSON.stringify({ query: value })
 });
 
-const getAccountNotification$ = token => getAPI$({
-  url: apiPaths.ACCOUNT_NOTIFICATION_SETTING,
-  headers: {
-    Authorization: `JWT ${token}`
-  }
-});
-
-const updateAccountNotification$ = (data, token) => putAPI$({
-  url: apiPaths.ACCOUNT_NOTIFICATION_SETTING,
-  headers: {
-    Authorization: `JWT ${token}`,
-    'Content-Type': 'application/json'
-  },
-  data: JSON.stringify(data)
-});
-
 export {
   performRegistration$,
   performLogin$,
   confirmRegistration$,
   updateUserInformation$,
-  changePassword$,
-  getUploadedData$,
-  requestToJoin$,
+  resetPassword$,
+  forgotPassword$,
   getUsersInfos$,
-  getAccountNotification$,
-  updateAccountNotification$
 };
