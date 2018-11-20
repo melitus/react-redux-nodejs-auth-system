@@ -2,20 +2,29 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import ForgotPasswordDetails from './forgotPasswordDetail/ForgotPasswordDetails';
+import { Input } from '../../Field/index';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
-const ForgotPasswordForm = (props) => {
-  const { handleSubmit, pristine, submitting, loading, error } = props;
+type ForgotPasswordProp = {
+  email?: string,
+};
+
+const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error, email}: ForgotPasswordProp ) => {
   return (
     <Container>
       <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
             <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
-              <Form.Field >
-                <ForgotPasswordDetails forgotPassword={ForgotPasswordDetails} />
-              </Form.Field>
+            <label target="forgotPassword.email">Email</label>
+              <Field
+                id="forgotPassword.email"
+                name="email"
+                component={Input}
+                placeholder="Email"
+                type="email"
+                value={email}
+              />
               {error && (
               <Message negative>
                 <p>{error}</p>
@@ -33,3 +42,4 @@ export default reduxForm({
   form: 'forgotPasswordForm',
   validate: forgotPasswordValidation,
 })(ForgotPasswordForm);
+

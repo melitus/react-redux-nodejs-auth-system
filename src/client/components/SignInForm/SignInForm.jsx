@@ -3,10 +3,15 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import SignInDetails from './SignInDetails/SignInDetails';
-import loginValidation from './loginValidation';
+import { Input } from '../../Field/index';
+import signInValidation from './signInValidation';
 
-const SignInForm = (props) => {
+type SignInFormProp = {
+  password?: number,
+  email: string,
+};
+
+const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignInFormProp) => {
   const { handleSubmit, pristine, submitting, loading, error } = props;
   return (
     <Container>
@@ -14,9 +19,25 @@ const SignInForm = (props) => {
         <Grid.Row centered>
           <Grid.Column width={6}>
             <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
-              <Form.Field >
-                <SignInDetails signInDetails={SignInDetails} />
-              </Form.Field>
+            <label target="signin.email">Email</label>
+              <Field
+                id="signin.email"
+                name="email"
+                component={Input}
+                placeholder="Email"
+                type="email"
+                value={email}
+              />
+
+              <label target="signin.passwword">Password</label>
+              <Field
+                id="signup.password"
+                name="password"
+                component={Input}
+                placeholder="••••••••••"
+                type="password"
+                value={password}
+              />
               {error && (
                 <Message negative>
                   <p>{error}</p>
@@ -30,9 +51,15 @@ const SignInForm = (props) => {
     </Container>
   );
 };
+
+SignInDetails.defaultProps = {
+  email: '',
+  password: '',
+};
+
     // Decorate the form component
 export default reduxForm({
   form: 'loginForm', // a unique name for this form
-  validate: loginValidation,
+  validate: signInValidation,
 })(SignInForm);
 

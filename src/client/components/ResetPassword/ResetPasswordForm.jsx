@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import ResetPasswordDetails from './ResetPasswordDetails/ResetPasswordDetails';
+import { Input } from '../../Field/index';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
 const ResetPasswordForm = (props) => {
@@ -13,9 +13,25 @@ const ResetPasswordForm = (props) => {
         <Grid.Row centered>
           <Grid.Column width={6}>
             <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
-              <Form.Field >
-                <ResetPasswordDetails resetPasswordDetails={ResetPasswordDetails} />
-              </Form.Field>
+            <label target="resetPasswordForm.password">Password</label>
+              <Field
+                id="resetPasswordForm.password"
+                name="password"
+                component={Input}
+                placeholder="Password"
+                type="password"
+                value={password}
+              />
+
+              <label target="resetPasswordForm.confirmPassword">Confirm Password</label>
+              <Field
+                id="resetPasswordForm.confirmPassword"
+                name=" confirmPassword"
+                component={Input}
+                placeholder="Confirm Password"
+                type="password"
+                value={ confirmPassword}
+              />
               {error && (
                 <Message negative>
                   <p>{error}</p>
