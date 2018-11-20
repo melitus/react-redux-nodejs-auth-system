@@ -5,8 +5,15 @@ import { Container, Grid, Form, Message } from 'semantic-ui-react';
 import { Input } from '../../Field/index';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
-const ResetPasswordForm = (props) => {
-  const { handleSubmit, pristine, submitting, loading, error } = props;
+type ResetPasswordFormProp = {
+  handleSubmit?: Function,
+  loading?: boolean,
+  pristine?: boolean,
+  submitting?: boolean,
+  error?: string
+};
+
+const ResetPasswordForm = ({handleSubmit, pristine, submitting, loading, error}:ResetPasswordFormProp) => {
   return (
     <Container>
       <Grid>
@@ -20,7 +27,6 @@ const ResetPasswordForm = (props) => {
                 component={Input}
                 placeholder="Password"
                 type="password"
-                value={password}
               />
 
               <label target="resetPasswordForm.confirmPassword">Confirm Password</label>
@@ -30,7 +36,6 @@ const ResetPasswordForm = (props) => {
                 component={Input}
                 placeholder="Confirm Password"
                 type="password"
-                value={ confirmPassword}
               />
               {error && (
                 <Message negative>

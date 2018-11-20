@@ -51,4 +51,4 @@ app.get('/', (req, res) => {
 
 // start the server
 app.listen(PORT);
-console.log('Server is Up and Running at Port : ', PORT);
+console.log(`==> 🌎  Listening on port ${PORT}. Open up http://localhost:${PORT}/ in your browser.`)

@@ -15,8 +15,8 @@ import ResetPassword from '../containers/ResetPassword/ResetPassword.state';
 
 export default (
   <Route path="/" component={Layout}>
-    <Route path="signup" components={{ header: Header, footer: Footer, main: Signup }} />
     <Route path="signin" components={{ header: Header, footer: Footer, main: SignIn }} />
+    <Route path="signup" components={{ header: Header, footer: Footer, main: Signup }} />
     <Route path="confirmation" components={{ header: Header, footer: Footer, main: Confirmation }} />
     <Route path="forgotpassword" components={{ header: Header, footer: Footer, main: ForgotPassword }} />
     <Route path="resetpassword" components={{ header: Header, footer: Footer, main: ResetPassword }} />

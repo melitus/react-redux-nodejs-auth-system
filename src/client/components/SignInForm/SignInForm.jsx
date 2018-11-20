@@ -7,8 +7,12 @@ import { Input } from '../../Field/index';
 import signInValidation from './signInValidation';
 
 type SignInFormProp = {
-  password?: number,
+  handleSubmit?: Function,
   email: string,
+  loading?: boolean,
+  pristine?: boolean,
+  submitting?: boolean,
+  error?: string
 };
 
 const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignInFormProp) => {
@@ -26,7 +30,6 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
                 component={Input}
                 placeholder="Email"
                 type="email"
-                value={email}
               />
 
               <label target="signin.passwword">Password</label>
@@ -36,7 +39,6 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
                 component={Input}
                 placeholder="••••••••••"
                 type="password"
-                value={password}
               />
               {error && (
                 <Message negative>

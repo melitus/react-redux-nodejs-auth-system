@@ -6,10 +6,15 @@ import { Input } from '../../Field/index';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
 type ForgotPasswordProp = {
-  email?: string,
+  handleSubmit?: Function,
+  email: string,
+  loading?: boolean,
+  pristine?: boolean,
+  submitting?: boolean,
+  error?: string
 };
 
-const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error, email}: ForgotPasswordProp ) => {
+const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error}: ForgotPasswordProp ) => {
   return (
     <Container>
       <Grid>
@@ -23,7 +28,6 @@ const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error, 
                 component={Input}
                 placeholder="Email"
                 type="email"
-                value={email}
               />
               {error && (
               <Message negative>

@@ -6,15 +6,15 @@ import { Form, Container, Grid, Message, Icon } from 'semantic-ui-react';
 import SignUpFormDetails from './SignUpFormDetails/SignUpFormDetails';
 
 type SignUpFormProp = {
-  firstName?: string,
-  lastName?: string,
-  password?: number,
+  handleSubmit?: Function,
   email: string,
-  phoneNumber: number,
+  loading?: boolean,
+  pristine?: boolean,
+  submitting?: boolean,
+  error?: string
 };
 
 const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUpFormProp) => {
-  const { handleSubmit, pristine, submitting, loading, error } = props;
   return (
     <Container>
       <Grid>
@@ -29,7 +29,6 @@ const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUp
                 label={{ content: <Icon color="blue" name="user" size="small" /> }}
                 labelPosition="left"
                 placeholder="First Name"
-                value={firstName}
                 autoFocus
               />
 
@@ -41,7 +40,6 @@ const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUp
                 label={{ content: <Icon color="blue" name="user" size="small" /> }}
                 labelPosition="left"
                 placeholder="Last Name"
-                value={lastName}
               />
 
               <label target="signup.password">Password</label>
@@ -53,7 +51,6 @@ const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUp
                 labelPosition="left"
                 placeholder="••••••••••"
                 type="password"
-                value={password}
               />
 
               <label target="signup.email">Email</label>
@@ -65,7 +62,6 @@ const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUp
                 labelPosition="left"
                 placeholder="Email"
                 type="email"
-                value={email}
               />
 
               <label target="signup.phoneNumber">Phone Number</label>
@@ -77,7 +73,6 @@ const SignupForm = ({handleSubmit, pristine, submitting, loading, error}: SignUp
                 labelPosition="left"
                 placeholder="Phone Number"
                 type="number"
-                value={phoneNumber}
               />
               {error && (
               <Message negative>
