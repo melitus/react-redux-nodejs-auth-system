@@ -14,7 +14,7 @@
     "dev": "nodemon --delay 250ms --exec NODE_ENV=development babel-node -- ./src/server/",
     "flow": "flow",
     "flow:dep": "flow-typed install",
-    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint": "eslint . --fix",
     "prebuild": "npm run clean:build",
     "prepublish": "npm run build",
     "prestart": "npm run clean:build",
@@ -28,6 +28,7 @@
     "lint",
     "test"
   ],
+  
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "6.4.5",

@@ -1,5 +1,5 @@
 import { postAPI$, /* getAPI$,  deleteAPI$,*/ putAPI$ } from '../Requests/index';
-import * as apiPathsRoot from '../ServiceTypes';
+import apiPathsRoot from '../ServicePaths';
 
 const apiPaths = apiPathsRoot.children;
 

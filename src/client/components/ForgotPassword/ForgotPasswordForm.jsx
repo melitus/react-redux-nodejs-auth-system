@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import { Input } from '../../Field/index';
+import { Input } from '../commons/Field/index';
 import forgotPasswordValidation from './forgotPasswordValidation';
 
 type ForgotPasswordProp = {
@@ -14,14 +14,13 @@ type ForgotPasswordProp = {
   error?: string
 };
 
-const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error}: ForgotPasswordProp ) => {
-  return (
-    <Container>
-      <Grid>
+const ForgotPasswordForm = ({ handleSubmit, pristine, submitting, loading, error }: ForgotPasswordProp) => (
+  <Container>
+    <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
             <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
-            <label target="forgotPassword.email">Email</label>
+              <label target="forgotPassword.email">Email</label>
               <Field
                 id="forgotPassword.email"
                 name="email"
@@ -39,9 +38,8 @@ const ForgotPasswordForm = ({handleSubmit, pristine, submitting,loading, error}:
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Container>
+  </Container>
   );
-};
 export default reduxForm({
   form: 'forgotPasswordForm',
   validate: forgotPasswordValidation,

@@ -3,7 +3,7 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import { Input } from '../../Field/index';
+import { renderFields } from '../commons/Field/index';
 import signInValidation from './signInValidation';
 
 type SignInFormProp = {
@@ -16,7 +16,6 @@ type SignInFormProp = {
 };
 
 const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignInFormProp) => {
-  const { handleSubmit, pristine, submitting, loading, error } = props;
   return (
     <Container>
       <Grid>
@@ -27,7 +26,7 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
               <Field
                 id="signin.email"
                 name="email"
-                component={Input}
+                component={renderField}
                 placeholder="Email"
                 type="email"
               />
@@ -36,7 +35,7 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
               <Field
                 id="signup.password"
                 name="password"
-                component={Input}
+                component={renderField}
                 placeholder="••••••••••"
                 type="password"
               />
@@ -52,11 +51,6 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
       </Grid>
     </Container>
   );
-};
-
-SignInDetails.defaultProps = {
-  email: '',
-  password: '',
 };
 
     // Decorate the form component

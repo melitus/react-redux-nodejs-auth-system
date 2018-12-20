@@ -2,7 +2,7 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import { Input } from '../../Field/index';
+import { Input } from '../commons/Field/index';
 import ResetPasswordFormValidation from './ResetPasswordFormValidation';
 
 type ResetPasswordFormProp = {

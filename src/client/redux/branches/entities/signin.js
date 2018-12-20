@@ -1,45 +1,43 @@
 // @flow
-import { handleActions } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import { getFormValues, submit as createSubmit } from 'redux-form';
 
-import { createActionWithPayload } from '../../utils/';
+const createActionName = name => `signIn/${name}`;
 
-const initialState = {
-  email: '',
-  password: '',
-  keepLoggedIn: false,
-  isSubmitting: false,
-  submitError: false,
-  errorMessage: '',
-  errors: {}
-};
-
-const createActionName = name => `signin/${name}`;
-
-/* eslint-disable no-underscore-dangle */
+// *********************************
 // Actions
-export const FORM_NAME = 'form/SIGNIN_FORM';
-export const DO_SIGNIN = createActionName('DO_SIGNIN');
-export const TRANSIT_TO_CONFIRMATION = createActionName(
-  'TRANSIT_TO_CONFIRMATION'
-);
+// *********************************
+
+export const FORM_NAME = 'SIGNIN_FORM';
+export const DO_SIGNIN_REQUEST = createActionName('DO_SIGNIN_REQUEST');
+export const DO_SIGNIN_SUCCESS = createActionName('DO_SIGNIN_SUCCESS');
+export const DO_SIGNIN_ERROR = createActionName('DO_SIGNIN_ERROR');
+
+export const LOGOUT = createActionName('LOGOUT');
+
+export const TRANSIT_TO_CONFIRMATION = createActionName('TRANSIT_TO_CONFIRMATION');
 export const TOGGLE_KEEP_LOGGED_IN = createActionName('TOGGLE_KEEP_LOGGED_IN');
-export const SIGNIN_REQUEST_SUCCESS = createActionName(
-  'SIGNIN_REQUEST_SUCCESS'
-);
-export const SIGNIN_REQUEST_ERROR = createActionName('SIGNIN_REQUEST_ERROR');
 
-// Action creators
+// *********************************
+// Action Creators
+// *********************************
+
 export const submit = createSubmit(FORM_NAME);
-export const doSIGNIN = createActionWithPayload(DO_SIGNIN);
-export const transitToConfirmation = createActionWithPayload(
-  TRANSIT_TO_CONFIRMATION
-);
-export const _requestSuccess = createActionWithPayload(SIGNIN_REQUEST_SUCCESS);
-export const _requestError = createActionWithPayload(SIGNIN_REQUEST_ERROR);
+export const doSignInRequest = createAction(DO_SIGNIN_REQUEST);
+export const doSignInSuccess = createAction(DO_SIGNIN_SUCCESS);
+export const doSignInError = createAction(DO_SIGNIN_ERROR);
 
+export const logout = createAction(LOGOUT);
+
+export const transitToConfirmation = createAction(TRANSIT_TO_CONFIRMATION);
+export const keepMeLoggedIn = createAction(TOGGLE_KEEP_LOGGED_IN);
+
+
+// *********************************
 // Selectors
+// *********************************
+
 export const selectSignInForm = getFormValues(FORM_NAME);
 
 export const selectSignInDetails = createSelector(
@@ -47,20 +45,39 @@ export const selectSignInDetails = createSelector(
   form => form.SIGNINDetails
 );
 
+// *********************************
 // Reducer
-export const reducer = handleActions(
-  {
-    [SIGNIN_REQUEST_SUCCESS]: (state, { payload }) => ({
-      ...payload
-    })
-  },
-  initialState
-);
+// *********************************
 
-// DispatchpersonInfo
-export const onSubmit = ({ SIGNINDetails }, dispatch) =>
-  new Promise((resolve) => {
-    resolve();
-    // const { SIGNINDetails } = payload;
-    dispatch(doSIGNIN({ ...SIGNINDetails }));
-  });
+const defaultUserState = {
+  isLoggingIn: false,
+  isLoggedIn: false,
+  email: '',
+  token: '',
+  loginError: '',
+  errorMessage: '',
+  errors: {}
+};
+
+export default handleActions({
+  [DO_SIGNIN_REQUEST]: (state, action) => ({
+    ...state,
+    isLoggingIn: true
+  }),
+  [DO_SIGNIN_SUCCESS]: (state, action) => ({
+    ...state,
+    isLoggingIn: false,
+    isLoggedIn: true,
+    user: action.payload
+  }),
+  [DO_SIGNIN_ERROR]: (state, action) => ({
+    ...state,
+    isLoggedIn: false,
+  }),
+  [LOGOUT]: (state, action) => {
+    if (!action.payload.isLogin) {
+      return defaultUserState;
+    }
+    return state;
+  }
+}, defaultUserState);

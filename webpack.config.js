@@ -42,7 +42,7 @@ const defaultConfig = {
         // For now copy from .babelrc
         options: {
           presets: ['es2015', 'react', 'flow'],
-          plugins:[
+          plugins: [
             ['transform-runtime', {
               helpers: false,
               polyfill: false,
@@ -108,28 +108,28 @@ const defaultConfig = {
     extensions: ['.js', '.json', '.jsx'],
   },
   plugins: [
-    new ExtractTextPlugin({ filename:  isDev ? 'css/base.css' : 'css/base-[hash].css', disable: false, allChunks: true }),
-    new webpack.DefinePlugin({ 'process.env': { BROWSER: JSON.stringify(isBrowser), NODE_ENV: JSON.stringify(env) }}),
+    new ExtractTextPlugin({ filename: isDev ? 'css/base.css' : 'css/base-[hash].css', disable: false, allChunks: true }),
+    new webpack.DefinePlugin({ 'process.env': { BROWSER: JSON.stringify(isBrowser), NODE_ENV: JSON.stringify(env) } }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: (module, count) => /node_modules/.test(module.resource) && count === 3 }),
     new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: isAnalyse }),
     ...(isDev
       ? []
       : [
-          new webpack.optimize.UglifyJsPlugin({
-            compress: {
-              screw_ie8: true,
-              warnings: false,
-            },
-            mangle: {
-              screw_ie8: true,
-            },
-            output: {
-              screw_ie8: true,
-              comments: false,
-            },
-          }),
-          new webpack.optimize.AggressiveMergingPlugin(),
-        ]),
+        new webpack.optimize.UglifyJsPlugin({
+          compress: {
+            screw_ie8: true,
+            warnings: false,
+          },
+          mangle: {
+            screw_ie8: true,
+          },
+          output: {
+            screw_ie8: true,
+            comments: false,
+          },
+        }),
+        new webpack.optimize.AggressiveMergingPlugin(),
+      ]),
   ]
 };
 

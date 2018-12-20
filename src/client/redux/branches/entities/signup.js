@@ -1,17 +1,57 @@
 // @flow
-import { handleActions } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 import { createSelector } from 'reselect';
 import { getFormValues, submit as createSubmit } from 'redux-form';
 
-import { createActionWithPayload } from '../../utils/';
 
-export const initialState = {
+const createActionName = name => `signup/${name}`;
+
+// *********************************
+// Actions
+// *********************************
+
+export const FORM_NAME = 'form/SIGNUP_FORM';
+export const DO_SIGNUP_REQUEST = createActionName('DO_SIGNUP_REQUEST');
+export const DO_SIGNUP_SUCCESS = createActionName(' DO_SIGNUP_SUCCESS');
+export const DO_SIGNUP_ERROR = createActionName('DO_SIGNUP_ERROR');
+
+export const TRANSIT_TO_CONFIRMATION = createActionName(
+  'TRANSIT_TO_CONFIRMATION'
+);
+
+// *********************************
+// Action Creators
+// *********************************
+
+export const submit = createSubmit(FORM_NAME);
+export const doSignupRequest = createAction(DO_SIGNUP_REQUEST);
+export const doSignupSuccess = createAction(DO_SIGNUP_SUCCESS);
+export const doSignupError = createAction(DO_SIGNUP_ERROR);
+
+export const transitToConfirmation = createAction(TRANSIT_TO_CONFIRMATION);
+
+// *********************************
+// Selectors
+// *********************************
+export const selectSignupForm = getFormValues(FORM_NAME);
+
+export const selectSignUpDetails = createSelector(
+  selectSignupForm,
+  form => form.signUpDetails
+);
+
+// *********************************
+// Reducer
+// *********************************
+
+const defaultUserState = {
   firstName: '',
   lastName: '',
   email: '',
   password: '',
   phoneNumber: '',
-  isSubmitting: false,
+  isRegistering: false,
+  isRegistered: false,
   submitError: false,
   errors: {
     firstName: [],
@@ -22,51 +62,25 @@ export const initialState = {
   }
 };
 
-const createActionName = name => `signup/${name}`;
-
-/* eslint-disable no-underscore-dangle */
-// Actions
-export const FORM_NAME = 'form/SIGNUP_FORM';
-export const DO_SIGNUP = createActionName('DO_SIGNUP');
-export const TRANSIT_TO_CONFIRMATION = createActionName(
-  'TRANSIT_TO_CONFIRMATION'
-);
-export const SIGNUP_REQUEST_SUCCESS = createActionName(
-  'SIGNUP_REQUEST_SUCCESS'
-);
-export const SIGNUP_REQUEST_ERROR = createActionName('SIGNUP_REQUEST_ERROR');
-
-// Action creators
-export const submit = createSubmit(FORM_NAME);
-export const doSignup = createActionWithPayload(DO_SIGNUP);
-export const transitToConfirmation = createActionWithPayload(
-  TRANSIT_TO_CONFIRMATION
-);
-export const _requestSuccess = createActionWithPayload(SIGNUP_REQUEST_SUCCESS);
-export const _requestError = createActionWithPayload(SIGNUP_REQUEST_ERROR);
-
-// Selectors
-export const selectSignupForm = getFormValues(FORM_NAME);
-
-export const selectSignUpDetails = createSelector(
-  selectSignupForm,
-  form => form.signUpDetails
-);
-
-// Reducer
-export const reducer = handleActions(
-  {
-    [SIGNUP_REQUEST_SUCCESS]: (state, { payload }) => ({
-      ...payload
-    })
-  },
-  initialState
-);
-
-// DispatchpersonInfo
-export const onSubmit = ({ signUpDetails }, dispatch) =>
-  new Promise((resolve) => {
-    resolve();
-    // const { signUpDetails } = payload;
-    dispatch(doSignup({ ...signUpDetails }));
-  });
+export default handleActions({
+  [DO_SIGNUP_REQUEST]: (state, action) => ({
+    ...state,
+    isRegistering: true
+  }),
+  [DO_SIGNUP_SUCCESS]: (state, action) => ({
+    ...state,
+    isRegistering: false,
+    isRegistered: true,
+    user: action.payload
+  }),
+  [DO_SIGNUP_ERROR]: (state, action) => ({
+    ...state,
+    isRegistered: false,
+  }),
+  [LOGOUT]: (state, action) => {
+    if (!action.payload.isLogin) {
+      return defaultUserState;
+    }
+    return state;
+  }
+}, defaultUserState);

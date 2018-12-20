@@ -1,3 +1,4 @@
+// @flow
 import fetch from 'isomorphic-fetch';
 import * as QueryString from 'qs';
 

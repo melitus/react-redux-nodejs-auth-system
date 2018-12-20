@@ -48,7 +48,7 @@ export function requiredPhone(value) {
 }
 
 export function minLength(min) {
-  return value => {
+  return (value) => {
     if (!isEmpty(value) && value.length < min) {
       return `Must be at least ${min} characters`;
     }
@@ -56,7 +56,7 @@ export function minLength(min) {
 }
 
 export function maxLength(max) {
-  return value => {
+  return (value) => {
     if (!isEmpty(value) && value.length > max) {
       return `Must be no more than ${max} characters`;
     }
@@ -70,7 +70,7 @@ export function integer(value) {
 }
 
 export function oneOf(enumeration) {
-  return value => {
+  return (value) => {
     if (!enumeration.includes(value)) {
       return `Must be one of: ${enumeration.join(', ')}`;
     }
@@ -90,7 +90,7 @@ export function match(field) {
 export function createValidator(rules, params) {
   return (data = {}) => {
     const errors = {};
-    Object.keys(rules).forEach(key => {
+    Object.keys(rules).forEach((key) => {
       const rule = join([].concat(rules[key])); // concat enables both functions and arrays of functions
       const error = rule(data[key], data, { key, ...params });
       if (error) {
