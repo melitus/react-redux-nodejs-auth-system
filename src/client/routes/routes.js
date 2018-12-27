@@ -1,4 +1,4 @@
-import getStore from '../store';
+import getStore from '../../client/redux/store/configureStore';
 
 function isLoggedIn() {
   const store = getStore();
@@ -10,7 +10,7 @@ function isLoggedIn() {
 export function requireAuth(nextState, replace) {
   if (!isLoggedIn()) {
     replace({
-      pathname: '/login',
+      pathname: '/signin',
       state: { nextPathname: nextState.location.pathname },
     });
     return false;
@@ -20,7 +20,7 @@ export function requireAuth(nextState, replace) {
 
 export function redirectHomeIfLoggedIn(nextState, replace) {
   if (isLoggedIn()) {
-    replace({ pathname: '/home' });
+    replace({ pathname: '/' });
     return true;
   }
   return false;
@@ -30,7 +30,7 @@ export function requiresUrlParams(...params) {
   return (nextState, replaceState) => {
     for (let i = 0; i < params.length; i += 1) {
       if (nextState.location.query[params[i]] === undefined) {
-        replaceState('/home');
+        replaceState('/');
         return;
       }
     }

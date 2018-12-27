@@ -77,10 +77,4 @@ export default handleActions({
     ...state,
     isRegistered: false,
   }),
-  [LOGOUT]: (state, action) => {
-    if (!action.payload.isLogin) {
-      return defaultUserState;
-    }
-    return state;
-  }
 }, defaultUserState);

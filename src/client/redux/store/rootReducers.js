@@ -3,7 +3,6 @@ import { routerReducer as routing } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
 import { reducer as entities } from '../branches/entities';
-import { reducer as entitiesMeta } from '../branches/entitiesMeta';
 
 const rootReducers = combineReducers({
   // Vendor reducers
@@ -11,8 +10,7 @@ const rootReducers = combineReducers({
   routing,
 
   // Own reducers
-  entities,
-  entitiesMeta
+  entities
 });
 
 export default rootReducers;

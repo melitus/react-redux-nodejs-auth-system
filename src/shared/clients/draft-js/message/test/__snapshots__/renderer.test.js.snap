@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`messageRenderer should render certain blocks 1`] = `
+Array [
+  "unstyled",
+  "code-block",
+  "blockquote",
+]
+`;

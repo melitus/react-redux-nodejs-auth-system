@@ -1,8 +1,15 @@
 import { combineReducers } from 'redux';
 
-import { reducer as signup } from './signup';
+import signup from './signup';
+import signin from './signin';
+import forgotpassword from './forgotpassword';
+import resetpassword from './resetpassword';
+
 
 /* eslint-disable import/prefer-default-export */
 export const reducer = combineReducers({
-  signup
+  signup,
+  signin,
+  forgotpassword,
+  resetpassword
 });

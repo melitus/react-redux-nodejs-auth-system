@@ -1,14 +1,17 @@
 import React from 'react';
-import { Router, browserHistory } from 'react-router';
+import { Router } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import Routes from '../../routes/userRoute';
-import store from '../../redux/store/configureStore';
+import configureStore from '../../redux/store/configureStore';
 
-//export const history = syncHistoryWithStore(browserHistory, store);
+const initialState = {};
+const store = configureStore(initialState);
+export const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 const App = () => (
-  <Router routes={Routes} />
+  <Router history={history} routes={Routes} />
 );
 
 export default App;
