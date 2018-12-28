@@ -14,6 +14,17 @@
 - SCSS configuration
 - Linting with Airbnb eslint configuration
 
+## Goals
+
+- **Zero modifications to your existing CRA application**
+- Create React App **without ejecting**
+- React 16 (fiber, baby!)
+- React Router v4 (with Obervable)
+- **Full SEO support** via React Helmet
+- **Preloaded page data** via async/await and React Frontload
+- **Code splitting** via React Loadable
+- Server-side **cookie support**
+
 ## Stages
 
 The whole project is split into *FIVE (5)* stages**:
