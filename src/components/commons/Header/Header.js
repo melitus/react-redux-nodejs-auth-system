@@ -24,6 +24,11 @@ const links = [
     auth: false
   },
   {
+    to: '/SignUp',
+    text: 'SignUp',
+    auth: false
+  },
+  {
     to: '/dashboard',
     text: 'Dashboard',
     auth: true

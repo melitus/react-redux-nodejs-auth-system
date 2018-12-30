@@ -1,12 +1,11 @@
 import React from 'react';
 
-// Passing Custom Reusable Components to Field
-export const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && error && <span>{error}</span>}
-    </div>
+export const renderField = ({input, label, type, meta: {touched, error}, disabled}) => (
+  <div className="form-group">
+      <label>{label}:</label>
+      <input {...input} className="form-control" disabled={disabled} type={type}/>
+      <div> 
+       {touched && error && <span style={{ color: 'red', fontWeight: 'bold' }} >{error}</span>}
+     </div>
   </div>
 );

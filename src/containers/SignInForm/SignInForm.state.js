@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';  
 
 import SignInForm from '../../components/SignInForm/SignInForm';
-import { selectSignInDetails } from '../../redux/branches/entities/signin';
+import { selectUserEmail } from '../../redux/branches/entities/signin';
+import { doSignInRequest } from '../../redux/branches/entities/signin'
 
 // event handling should be done here
 export const SignInFormContainer = props => (
@@ -15,12 +17,14 @@ export const SignInFormContainer = props => (
 
 
 export const mapDispatchToProps = dispatch => ({
-  onSubmit: () => dispatch({ type: 'DO_SIGNIN' })
+  onSubmit: () => bindActionCreators(doSignInRequest, dispatch)
 });
 
-export const mapStateToProps = state => ({
-  loginDetails: selectSignInDetails(state),
-});
+export const mapStateToProps = state => {
+  console.log('STATE', state);
+  return ({
+    loginUserEmail: selectUserEmail(state),
+})};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInFormContainer);

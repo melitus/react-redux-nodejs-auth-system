@@ -9,7 +9,7 @@ const createActionName = name => `signIn/${name}`;
 // Actions
 // *********************************
 
-export const FORM_NAME = 'SIGNIN_FORM';
+export const FORM_NAME = 'SignInForm';
 export const DO_SIGNIN_REQUEST = createActionName('DO_SIGNIN_REQUEST');
 export const DO_SIGNIN_SUCCESS = createActionName('DO_SIGNIN_SUCCESS');
 export const DO_SIGNIN_ERROR = createActionName('DO_SIGNIN_ERROR');
@@ -40,9 +40,13 @@ export const keepMeLoggedIn = createAction(TOGGLE_KEEP_LOGGED_IN);
 
 export const selectSignInForm = getFormValues(FORM_NAME);
 
-export const selectSignInDetails = createSelector(
+export const selectUserEmail = createSelector(
   selectSignInForm,
-  form => form.SIGNINDetails
+ // (state) => state.form
+);
+export const selectErrorMessage = createSelector(
+  selectSignInForm,
+ // (form) => form.errorMessage
 );
 
 // *********************************

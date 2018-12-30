@@ -1,10 +1,12 @@
 // @flow
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { Container, Grid, Form, Message } from 'semantic-ui-react';
 
-import { renderFields } from '../commons/Field/index';
+import { renderField } from '../commons/Field/index';
 import signInValidation from './signInValidation';
+import Page from '../../Hoc/page';
+
 
 type SignInFormProp = {
   handleSubmit?: Function,
@@ -17,27 +19,27 @@ type SignInFormProp = {
 
 const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignInFormProp) => {
   return (
+    <Page id="login" title="Login" description="We need to log in to portal.">
     <Container>
       <Grid>
         <Grid.Row centered>
           <Grid.Column width={6}>
             <Form onSubmit={handleSubmit} autoComplete="off" loading={loading} >
-            <label target="signin.email">Email</label>
               <Field
                 id="signin.email"
                 name="email"
                 component={renderField}
                 placeholder="Email"
                 type="email"
+                label="Email"
               />
-
-              <label target="signin.passwword">Password</label>
               <Field
                 id="signup.password"
                 name="password"
                 component={renderField}
                 placeholder="••••••••••"
                 type="password"
+                label=" Password"
               />
               {error && (
                 <Message negative>
@@ -50,12 +52,13 @@ const SignInForm = ({handleSubmit, pristine, submitting, loading, error}: SignIn
         </Grid.Row>
       </Grid>
     </Container>
+    </Page>
   );
 };
 
     // Decorate the form component
 export default reduxForm({
-  form: 'loginForm', // a unique name for this form
+  form: 'SignInForm', // a unique name for this form
   validate: signInValidation,
 })(SignInForm);
 

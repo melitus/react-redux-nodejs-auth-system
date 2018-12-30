@@ -26,10 +26,17 @@ const Dashboard = Loadable({
 });
 
 const Login = Loadable({
-  loader: () => import(/* webpackChunkName: "login" */ '../components/login'),
+  loader: () => import(/* webpackChunkName: "login" */ '../containers/SignInForm/SignInForm.state'),
   loading: () => null,
   modules: ['login']
 });
+
+const SignUp = Loadable({
+  loader: () => import(/* webpackChunkName: "SignUp" */ '../containers/SIgnUpForm/SignupForm.state'),
+  loading: () => null,
+  modules: ['SignUp']
+});
+
 
 const Logout = Loadable({
   loader: () => import(/* webpackChunkName: "logout" */ '../components/Logout'),
@@ -52,6 +59,7 @@ export default () => (
 
     <AuthenticatedRoute exact path="/dashboard" component={Dashboard} />
 
+    <UnauthenticatedRoute exact path="/SignUp" component={SignUp} />
     <UnauthenticatedRoute exact path="/login" component={Login} />
     <AuthenticatedRoute exact path="/logout" component={Logout} />
 

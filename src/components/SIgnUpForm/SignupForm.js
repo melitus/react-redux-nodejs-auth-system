@@ -1,19 +1,24 @@
-// @flow
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { Form, Container, Grid, Message, Icon } from 'semantic-ui-react';
 
 import signUpValidation from './signUpValidation';
+import { renderField } from '../commons/Field/index';
+import Page from '../../Hoc/page';
+
+
 
 type SignUpFormProp = {
   handleSubmit?: Function,
   loading?: boolean,
+  renderField?: Function,
   pristine?: boolean,
   submitting?: boolean,
   error?: string
 };
 
-const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: SignUpFormProp) => (
+const SignupForm = ({ handleSubmit, pristine, submitting, loading, error } :SignUpFormProp ) => (
+  <Page id="register" title="SignUp" description="We need to register in the portal.">
   <Container>
     <Grid>
       <Grid.Row centered>
@@ -23,9 +28,7 @@ const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: Sign
             <Field
               id="signup.firstName"
               name="firstName"
-              component={LabelInputField}
-              label={{ content: <Icon color="blue" name="user" size="small" /> }}
-              labelPosition="left"
+              component={renderField}
               placeholder="First Name"
               autoFocus
             />
@@ -34,19 +37,15 @@ const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: Sign
             <Field
               id="signup.lastName"
               name="lastName"
-              component={LabelInputField}
-              label={{ content: <Icon color="blue" name="user" size="small" /> }}
-              labelPosition="left"
+              component={renderField}
               placeholder="Last Name"
             />
 
             <label target="signup.password">Password</label>
             <Field
               id="signup.password"
-              name="Password"
-              component={LabelInputField}
-              label={{ content: <Icon color="blue" name="lock" size="small" /> }}
-              labelPosition="left"
+              name="password"
+              component={renderField}
               placeholder="••••••••••"
               type="password"
             />
@@ -55,9 +54,7 @@ const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: Sign
             <Field
               id="signup.email"
               name="email"
-              component={LabelInputField}
-              label={{ content: <Icon color="blue" name="envelope" size="small" /> }}
-              labelPosition="left"
+              component={renderField}
               placeholder="Email"
               type="email"
             />
@@ -66,9 +63,7 @@ const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: Sign
             <Field
               id="signup.phoneNumber"
               name="phoneNumber"
-              component={LabelInputField}
-              label={{ content: <Icon color="blue" name="phone" size="small" /> }}
-              labelPosition="left"
+              component={renderField}
               placeholder="Phone Number"
               type="number"
             />
@@ -83,6 +78,7 @@ const SignupForm = ({ handleSubmit, pristine, submitting, loading, error }: Sign
       </Grid.Row>
     </Grid>
   </Container>
+  </Page>
   );
 
 export default reduxForm({

@@ -11,9 +11,11 @@ import {
 } from '../branches/entities/signup';
 
 const doSignupEpic = action$ =>
-  action$.ofType(doSignupRequest).switchMap(action =>
-    performRegistration$(action.payload)
-      .switchMap(response =>
+ action$
+  .ofType(doSignupRequest)
+    .switchMap(action =>
+      performRegistration$(action.payload)
+       .switchMap(response =>
         Observable.concat(
           Observable.of(doSignupSuccess(response)),
           Observable.of(transitToConfirmation({}))

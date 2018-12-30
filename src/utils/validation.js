@@ -5,50 +5,21 @@ const isPhoneEmpty = value =>
 
 const join = rules => (value, data, params) => rules.map(rule => rule(value, data, params)).filter(error => !!error)[0];
 
-export function checkEmail(value) {
+export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
   if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
     return 'Invalid email address';
   }
-  return true;
 }
-
-export function email(value) {
-  if (!isEmpty(value) && checkEmail(value)) {
-    return {
-      text: 'enter the valid email address',
-      intlKey: 'errors.invalid_email_address',
-      values: {}
-    };
-  }
-}
-
-export function isEmail(value) {
-  if (!isEmpty(value) && checkEmail(value)) {
-    return false;
-  }
-  return true;
-}
-
 
 export function required(value) {
   if (isEmpty(value)) {
-    return 'Required';
-  }
-}
-
-export function requiredPhone(value) {
-  if (isPhoneEmpty(value)) {
-    return {
-      text: 'Required field',
-      intlKey: 'errors.required_field',
-      values: {}
-    };
+    return 'Field is required';
   }
 }
 
 export function minLength(min) {
-  return (value) => {
+  return value => {
     if (!isEmpty(value) && value.length < min) {
       return `Must be at least ${min} characters`;
     }
@@ -56,7 +27,7 @@ export function minLength(min) {
 }
 
 export function maxLength(max) {
-  return (value) => {
+  return value => {
     if (!isEmpty(value) && value.length > max) {
       return `Must be no more than ${max} characters`;
     }
@@ -70,7 +41,7 @@ export function integer(value) {
 }
 
 export function oneOf(enumeration) {
-  return (value) => {
+  return value => {
     if (!enumeration.includes(value)) {
       return `Must be one of: ${enumeration.join(', ')}`;
     }
@@ -86,6 +57,15 @@ export function match(field) {
     }
   };
 }
+
+
+export function requiredPhone(value) {
+  if (isPhoneEmpty(value)) {
+    return 'Required field'
+    
+  }
+}
+
 
 export function createValidator(rules, params) {
   return (data = {}) => {

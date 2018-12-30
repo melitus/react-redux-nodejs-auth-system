@@ -8,10 +8,11 @@ import {
 } from '../../utils/validation';
 
 const signUpValidation = createValidator({
+  firstName: required,
+  lastName: required,
   email: [email, required],
   password: [required, minLength(6)],
-  phoneNo: [integer, required],
-  firstname: required,
-  lastname: required
+  phoneNumber: [integer, required],
+  
 });
 export default memoize(10)(signUpValidation);
