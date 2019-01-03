@@ -56,7 +56,7 @@ export const selectErrorMessage = createSelector(
 const defaultUserState = {
   isLoggingIn: false,
   isLoggedIn: false,
-  email: '',
+  user: '',
   token: '',
   loginError: '',
   errorMessage: '',
@@ -79,9 +79,9 @@ export default handleActions({
     isLoggedIn: false,
   }),
   [LOGOUT]: (state, action) => {
-    if (!action.payload.isLogin) {
-      return defaultUserState;
+    return {
+      ...state,
+      user: null
     }
-    return state;
   }
 }, defaultUserState);

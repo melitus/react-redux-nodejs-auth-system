@@ -12,10 +12,12 @@ export function email(value) {
   }
 }
 
-export function required(value) {
+export function required(text) {
+  return value => {
   if (isEmpty(value)) {
-    return 'Field is required';
+    return `${text} is required`;
   }
+};
 }
 
 export function minLength(min) {

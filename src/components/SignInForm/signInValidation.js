@@ -6,7 +6,7 @@ import {
   minLength } from '../../utils/validation';
 
 const loginValidation = createValidator({
-  email: [email, required],
-  password: [required, minLength(6)]
+  email: [email, required("Email")],
+  password: [required('Password'), minLength(6)]
 });
 export default memoize(10)(loginValidation);

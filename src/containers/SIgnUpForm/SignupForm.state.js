@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import SignupForm from '../../components/SIgnUpForm/SignupForm';
 import { selectSignupForm } from '../../redux/branches/entities/signup';
-import signupEpic  from '../../redux/epics/signup';
+import doSignupRequest  from '../../redux/branches/entities/signup';
 
 
 class SignupFormContainer extends React.Component{
    submitForm = (formValues) => {
     console.log('submitting Form: ', formValues);
-    signupEpic(formValues);
+    doSignupRequest(formValues);
   }
 
   render() {
